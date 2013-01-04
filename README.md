@@ -11,19 +11,19 @@ http://localwiki.readthedocs.org/en/latest/api.html
 Installation
 ------------
 
-    $ gem install localwiki
+    $ gem install local_wiki
 
 Usage
 -----
 
 ## Example
 
-    require 'localwiki'
-    site = LocalWiki.new 'seattlewiki.net'
-    puts site.name
-    # => "SeattleWiki"
-    puts site.total_resources('user')
-    # => "47"
+    require 'local_wiki'
+    wiki = LocalWiki.new 'seattlewiki.net'
+    wiki.site_name
+    => SeattleWiki
+    wiki.total_resources('user')
+    => 47
 
 Contributing
 ------------

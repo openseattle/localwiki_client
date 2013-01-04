@@ -1,3 +1,6 @@
+require 'rest-client'
+require 'json/pure'
+
 class LocalWiki
 
   require 'rest-client'
