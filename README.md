@@ -11,7 +11,7 @@ http://localwiki.readthedocs.org/en/latest/api.html
 Installation
 ------------
 
-    $ gem install local_wiki
+    $ gem install localwiki
 
 Usage
 -----
