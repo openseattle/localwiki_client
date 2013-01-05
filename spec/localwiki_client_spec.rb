@@ -26,14 +26,18 @@ describe 'LocalwikiClient' do
     it {should respond_to :time_zone}
     it {should respond_to :language_code}
     it {should respond_to :total_resources}
+    it {should respond_to :page_by_name}
 
     context 'mockwiki.foo' do
+
       context '#time_zone' do
         it {subject.time_zone.should eq 'America/Chicago' }
       end
+
       context '#language_code' do
         it {subject.language_code.should eq 'en-us'}
       end
+
       context '#total_resources("user")' do
         it 'should eq 6' do
           response = double('response')
@@ -50,6 +54,23 @@ describe 'LocalwikiClient' do
           subject.total_resources('user').should eq 6
         end
       end
+
+      context "#page_by_name('Luna Park Cafe')" do
+        it 'has content matching "amusement park"' do
+          response = double('response')
+          response.stub(:body) {
+            %q[{"content": "<p>\n\t </p>\n<table class=\"details\">\n\t<tbody>\n\t\t<tr>\n\t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n\t\t\t\t<strong>Location</strong></td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>\n\t\t\t\t<p>\n\t\t\t\t\t2918 Southwest Avalon Way</p>\n\t\t\t\t<p>\n\t\t\t\t\tSeattle, WA 98126</p>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n\t\t\t\t<strong>Hours</strong></td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>\n\t\t\t\t7am - 10pm Everyday</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n\t\t\t\t<strong>Phone</strong></td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>\n\t\t\t\t(206) 935-7250</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n\t\t\t\t<strong>Website</strong></td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>\n\t\t\t\t<a href=\"http://www.lunaparkcafe.com/\">lunaparkcafe.com</a></td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n\t\t\t\t<strong>Established</strong></td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>\n\t\t\t\tMarch 18th, 1989</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n\t\t\t\t<strong>Price range</strong></td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>\n\t\t\t\t$10</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n\t\t\t\t<strong>Payment Methods</strong></td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>\n\t\t\t\tCash, credit cards</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n\t\t\t\t<strong>Wheelchair accessibility</strong></td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>\n\t\t\t\tNo stairs.</td>\n\t\t</tr>\n\t</tbody>\n</table>\n<p>\n\tFantastic diner filled with historic references to the Luna Park amusement park.</p>\n<p>\n\t<span class=\"image_frame image_frame_border\"><img src=\"_files/luna_park_cafe_front.jpg\" style=\"width: 300px; height: 225px;\"></span><span class=\"image_frame image_frame_border\"><img src=\"_files/luna_park_cafe_batmobile_ride.jpg\" style=\"width: 300px; height: 225px;\"></span></p>\n<h3>\n\tRelated Links</h3>\n<ul>\n\t<li>\n\t\t<a href=\"Restaurants\">Restaurants</a></li>\n</ul>\n<p>\n\t </p>\n", "id": 572, "map": "/api/map/Luna_Park_Cafe", "name": "Luna Park Cafe", "page_tags": "/api/page_tags/Luna_Park_Cafe", "resource_uri": "/api/page/Luna_Park_Cafe", "slug": "luna park cafe"}]
+          }
+          RestClient::Request.should_receive(:execute
+            ).with(
+              {:method => :get,
+               :url => 'http://mockwiki.foo/api/page/Luna_Park_Cafe?limit=0&format=json',
+               :timeout => 120}
+            ).and_return(response)
+          subject.page_by_name('Luna Park Cafe')['content'].should match(/amusement park/)
+        end
+      end
+
       it '#currently_online?' do
         RestClient::Request.should_receive(:execute
           ).with(

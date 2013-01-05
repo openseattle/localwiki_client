@@ -41,4 +41,11 @@ class LocalwikiClient
     get_resource(content_type,1)["meta"]["total_count"]
   end
 
+  ##
+  # return a page that matches name ("The Page Name" or "The_Page_Name")
+  #
+  def page_by_name(name)
+    get_resource("page/#{name.gsub!(/\s/, '_')}")
+  end
+
 end
