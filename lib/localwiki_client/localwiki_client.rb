@@ -1,10 +1,7 @@
 require 'rest-client'
 require 'json/pure'
 
-class LocalWiki
-
-  require 'rest-client'
-  require 'json/pure'
+class LocalwikiClient
 
   attr_accessor  :base_url
   attr_reader   :site_name, :time_zone, :language_code
@@ -34,7 +31,7 @@ class LocalWiki
     JSON.parse(response.body)
   end
 
-  # resource_types = ["site", page", "user", "file", "map"]
+  # resource_types = ["site", "page", "user", "file", "map"]
   def get_resource(content_type,limit=0,filters='')
     resource = '/api/' + content_type + '?limit=' + limit.to_s + filters
     get(resource)

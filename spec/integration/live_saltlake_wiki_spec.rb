@@ -1,8 +1,9 @@
-require_relative '../../lib/local_wiki'
+$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
+require 'localwiki_client'
 
 describe 'saltlakewiki.org' do
 
-  subject { LocalWiki.new 'saltlakewiki.org' }
+  subject { LocalwikiClient.new 'saltlakewiki.org' }
 
   it {should be_currently_online}
 

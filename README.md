@@ -1,25 +1,25 @@
-LocalWiki
-=========
+LocalwikiClient
+===============
 
 Synopsis
 --------
 
-A thin wrapper around the LocalWiki API
+A thin client for the Localwiki API
 
 http://localwiki.readthedocs.org/en/latest/api.html
 
 Installation
 ------------
 
-    $ gem install localwiki
+    $ gem install localwiki_client
 
 Usage
 -----
 
 ## Example
 
-    require 'local_wiki'
-    wiki = LocalWiki.new 'seattlewiki.net'
+    require 'localwiki_client'
+    wiki = LocalwikiClient.new 'seattlewiki.net'
     wiki.site_name
     => SeattleWiki
     wiki.total_resources('user')
@@ -36,7 +36,7 @@ LICENSE
 
 (The MIT License)
 
-Copyright (c) 2012 Brandon Faloona, Seth Vincent
+Copyright (c) 2013 Brandon Faloona, Seth Vincent
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

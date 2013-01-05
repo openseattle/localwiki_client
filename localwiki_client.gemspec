@@ -1,18 +1,17 @@
-$LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
-require 'local_wiki/version'
-
 Gem::Specification.new do |s|
-  s.name        = 'localwiki'
-  s.version     = LocalWiki::VERSION
+  s.name        = 'localwiki_client'
+  s.version     = '0.0.3'
   s.authors     = ["Brandon Faloona", "Seth Vincent"]
-  s.description = %{ A thin wrapper around the LocalWiki API. }
-  s.summary     = "localwiki-#{s.version}"
+  s.description = %{ A thin wrapper around the Localwiki API. }
+  s.summary     = "localwiki_client-#{s.version}"
   s.email       = 'brandon@faloona.net'
-  s.homepage    = "http://github.com/bfaloona/LocalWiki"
+  s.homepage    = "http://github.com/bfaloona/LocalwikiClient"
   s.license     = 'MIT'
-
   s.platform    = Gem::Platform::RUBY
   s.required_ruby_version = '>= 1.9.2'
+
+  s.add_dependency('rest-client')
+  s.add_dependency('json')
 
   s.add_development_dependency('rake')
   s.add_development_dependency('rspec', '>= 2.9.0')
@@ -30,7 +29,7 @@ Gem::Specification.new do |s|
 
   s.post_install_message =
   %{
-    Thank you for installing LocalWiki #{LocalWiki::VERSION}
+    Thank you for installing localwiki_client #{s.version}
   }
 
   s.files             = `git ls-files`.split("\n")

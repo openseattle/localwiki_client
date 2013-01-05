@@ -1,10 +1,11 @@
-require_relative '../lib/local_wiki'
+$LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
+require 'localwiki_client'
 require 'rspec/mocks'
 
-describe 'LocalWiki' do
+describe 'LocalwikiClient' do
 
   context 'Site details' do
-    subject { LocalWiki.new 'mockwiki.foo' }
+    subject { LocalwikiClient.new 'mockwiki.foo' }
 
     before(:each) do
       response = double('response')
@@ -45,7 +46,7 @@ describe 'LocalWiki' do
                  :url => 'http://mockwiki.foo/api/user?limit=0&format=json',
                  :timeout => 120}
             ).and_return(response)
-          #LocalWiki.new('mockwiki.foo').
+          #LocalwikiClient.new('mockwiki.foo').
           subject.total_resources('user').should eq 6
         end
       end
@@ -56,7 +57,7 @@ describe 'LocalWiki' do
                :url => 'mockwiki.foo',
                :headers=>{}}
           ).and_return("")
-        LocalWiki.new('mockwiki.foo').should be_currently_online
+        LocalwikiClient.new('mockwiki.foo').should be_currently_online
       end
     end
   end
