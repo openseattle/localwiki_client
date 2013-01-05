@@ -1,3 +1,7 @@
+=== 0.0.4 / 2013-01-05
+
+* Fixed gem homepage
+
 === 0.0.3 / 2013-01-05
 
 * Renamed to localwiki_client

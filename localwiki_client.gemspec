@@ -1,11 +1,11 @@
 Gem::Specification.new do |s|
   s.name        = 'localwiki_client'
-  s.version     = '0.0.3'
+  s.version     = '0.0.4'
   s.authors     = ["Brandon Faloona", "Seth Vincent"]
   s.description = %{ A thin wrapper around the Localwiki API. }
   s.summary     = "localwiki_client-#{s.version}"
   s.email       = 'brandon@faloona.net'
-  s.homepage    = "http://github.com/bfaloona/LocalwikiClient"
+  s.homepage    = "http://github.com/bfaloona/localwiki_client"
   s.license     = 'MIT'
   s.platform    = Gem::Platform::RUBY
   s.required_ruby_version = '>= 1.9.2'
