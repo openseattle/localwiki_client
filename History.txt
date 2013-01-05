@@ -1,6 +1,8 @@
-=== 0.0.3 / 2013-01-04
+=== 0.0.3 / 2013-01-05
 
-* ZOMG! Rename to localwiki_client
+* Renamed to localwiki_client
+* #total_resources now uses &limit=1
+* #page_by_name
 
 === 0.0.2 / 2013-01-03
 
