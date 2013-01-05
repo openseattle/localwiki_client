@@ -5,8 +5,6 @@ describe 'LIVE saltlakewiki.org' do
 
   subject { LocalwikiClient.new 'saltlakewiki.org' }
 
-  it {should be_currently_online}
-
   context '#time_zone' do
     it {subject.time_zone.should eq 'America/Chicago' }
   end

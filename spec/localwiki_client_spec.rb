@@ -22,7 +22,6 @@ describe 'LocalwikiClient' do
 
     it {should respond_to :hostname}
     it {should respond_to :site_name}
-    it {should respond_to :currently_online?}
     it {should respond_to :time_zone}
     it {should respond_to :language_code}
     it {should respond_to :total_resources}
@@ -70,15 +69,6 @@ describe 'LocalwikiClient' do
         end
       end
 
-      it '#currently_online?' do
-        RestClient::Request.should_receive(:execute
-          ).with(
-              {:method => :get,
-               :url => 'mockwiki.foo',
-               :headers=>{}}
-          ).and_return("")
-        LocalwikiClient.new('mockwiki.foo').should be_currently_online
-      end
     end
   end
 end
