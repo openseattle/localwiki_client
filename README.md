@@ -1,5 +1,6 @@
 LocalwikiClient
 ===============
+[![Build Status](https://travis-ci.org/bfaloona/localwiki_client.png?branch=master)](https://travis-ci.org/bfaloona/localwiki_client) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/bfaloona/localwiki_client)
 
 Synopsis
 --------
@@ -24,6 +25,12 @@ Usage
     => SeattleWiki
     wiki.total_resources('user')
     => 47
+
+Compatibility
+-------------
+ * 1.9.3
+ * jruby-19mode
+ * rbx-19mode
 
 Contributing
 ------------

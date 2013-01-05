@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.name        = 'localwiki_client'
   s.version     = '0.0.4'
   s.authors     = ["Brandon Faloona", "Seth Vincent"]
-  s.description = %{ A thin wrapper around the Localwiki API. }
+  s.description = %{ A thin client that wraps the Localwiki API. }
   s.summary     = "localwiki_client-#{s.version}"
   s.email       = 'brandon@faloona.net'
   s.homepage    = "http://github.com/bfaloona/localwiki_client"
