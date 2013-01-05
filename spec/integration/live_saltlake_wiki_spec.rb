@@ -1,7 +1,7 @@
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
 require 'localwiki_client'
 
-describe 'saltlakewiki.org' do
+describe 'LIVE saltlakewiki.org' do
 
   subject { LocalwikiClient.new 'saltlakewiki.org' }
 

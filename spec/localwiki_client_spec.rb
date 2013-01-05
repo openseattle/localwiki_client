@@ -20,7 +20,7 @@ describe 'LocalwikiClient' do
         ).and_return(response)
     end
 
-    it {should respond_to :base_url}
+    it {should respond_to :hostname}
     it {should respond_to :site_name}
     it {should respond_to :currently_online?}
     it {should respond_to :time_zone}
@@ -50,7 +50,6 @@ describe 'LocalwikiClient' do
                  :url => 'http://mockwiki.foo/api/user?limit=1&format=json',
                  :timeout => 120}
             ).and_return(response)
-          #LocalwikiClient.new('mockwiki.foo').
           subject.total_resources('user').should eq 6
         end
       end
