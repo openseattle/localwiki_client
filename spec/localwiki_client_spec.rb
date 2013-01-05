@@ -43,7 +43,7 @@ describe 'LocalwikiClient' do
           RestClient::Request.should_receive(:execute
             ).with(
                 {:method => :get,
-                 :url => 'http://mockwiki.foo/api/user?limit=0&format=json',
+                 :url => 'http://mockwiki.foo/api/user?limit=1&format=json',
                  :timeout => 120}
             ).and_return(response)
           #LocalwikiClient.new('mockwiki.foo').

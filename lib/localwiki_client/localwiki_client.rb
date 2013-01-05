@@ -38,7 +38,7 @@ class LocalwikiClient
   end
 
   def total_resources(content_type)
-    get_resource(content_type)["meta"]["total_count"]
+    get_resource(content_type,1)["meta"]["total_count"]
   end
 
 end
