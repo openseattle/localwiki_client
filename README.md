@@ -1,6 +1,6 @@
 LocalwikiClient
 ===============
-[![Build Status](https://travis-ci.org/bfaloona/localwiki_client.png?branch=master)](https://travis-ci.org/bfaloona/localwiki_client) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/bfaloona/localwiki_client)
+[![Build Status](https://travis-ci.org/codeforseattle/localwiki_client.png?branch=master)](https://travis-ci.org/codeforseattle/localwiki_client) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/codeforseattle/localwiki_client)
 
 Synopsis
 --------
