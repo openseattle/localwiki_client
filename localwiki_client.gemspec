@@ -1,6 +1,9 @@
+$LOAD_PATH.unshift(File.expand_path('./lib', File.dirname(__FILE__)))
+require 'localwiki/version'
+
 Gem::Specification.new do |s|
   s.name        = 'localwiki_client'
-  s.version     = '0.0.4'
+  s.version     = Localwiki::VERSION
   s.authors     = ["Brandon Faloona", "Seth Vincent"]
   s.description = %{ A thin client that wraps the Localwiki API. }
   s.summary     = "localwiki_client-#{s.version}"

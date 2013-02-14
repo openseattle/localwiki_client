@@ -23,7 +23,7 @@ Usage
     wiki = LocalwikiClient.new 'seattlewiki.net'
     wiki.site_name
     => SeattleWiki
-    wiki.total_resources('user')
+    wiki.count('user')
     => 47
 
 Compatibility
