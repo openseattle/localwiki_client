@@ -1,4 +1,4 @@
-require 'rest-client'
+require 'faraday'
 require 'json/pure'
 
 module Localwiki
@@ -20,17 +20,8 @@ module Localwiki
     #
     def initialize hostname
       @hostname = hostname
+      create_connection
       collect_site_details
-    end
-
-    ##
-    # Get site resource and set instance variables
-    #
-    def collect_site_details
-      site = fetch('site','1',['format=json'])
-      @site_name = site['name']
-      @time_zone = site['time_zone']
-      @language_code = site['language_code']
     end
 
     ##
@@ -51,21 +42,21 @@ module Localwiki
     # list of a specific type of resource
     # resource are "site", "page", "user", "file", "map", "tag", "page_tag"
     # limit is an integer
-    # filters is a query string param in the form "&option=value"
-    def list(resource,limit=0,filters=[])
+    # params is a hash of query string params
+    def list(resource,limit=0,params={})
       uri = '/api/' + resource.to_s
-      filters << "limit=#{limit}"
-      http_get(uri,filters)
+      params.merge!({limit: limit.to_s})
+      http_get(uri,params)
     end
 
     ##
     # fetch a specific resource
     # resources are "site", "page", "user", "file", "map", "tag", "page_tag"
     # identifier is id, pagename, slug, etc.
-    # filters is array of 'option=value'
-    def fetch(resource,identifier,filters=[])
+    # params is a hash of query string params
+    def fetch(resource,identifier,params={})
       uri = '/api/' + resource.to_s + '/' + identifier
-      http_get(uri,filters)
+      http_get(uri,params)
     end
 
     ##
@@ -94,17 +85,30 @@ module Localwiki
     private
 
     ##
-    # http get request
-    # url is formatted as http://[url-to-wiki]/[thing(s)-you-want]&filters
+    # Get site resource and set instance variables
     #
-    def http_get(uri,filters=['format=json'],timeout=120)
-      if filters.select { |value| value.match /format/ }.empty?
-        filters << 'format=json'
-      end
-      response = RestClient::Request.execute(
-          :method => :get,
-          :url => 'http://' + @hostname + uri.to_s + '?' + filters.join("&"),
-          :timeout => timeout)
+    def collect_site_details
+      site = fetch('site','1')
+      @site_name = site['name']
+      @time_zone = site['time_zone']
+      @language_code = site['language_code']
+    end
+
+    ##
+    # create Faraday::Connection instance and set @site
+    #
+    def create_connection
+      @site = Faraday.new :url => @hostname
+    end
+
+    ##
+    # http get request
+    # url is formatted as http://[@hostname]/[thing(s)-you-want]?[params]
+    #
+    def http_get(uri,params={})
+      params.merge!({format: 'json'})
+      full_url = 'http://' + @hostname + uri.to_s
+      response = @site.get full_url, params
       JSON.parse(response.body)
     end
 

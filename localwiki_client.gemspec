@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.required_ruby_version = '>= 1.9.2'
 
-  s.add_dependency('rest-client')
+  s.add_dependency('faraday')
   s.add_dependency('json')
 
   s.add_development_dependency('rake')

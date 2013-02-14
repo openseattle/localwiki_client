@@ -11,24 +11,28 @@ describe Localwiki::Client do
       @site_fetch_json = load_json 'site_fetch.json'
     end
 
-    before(:each) do
-      response = double('response')
-      response.stub(:body) { @site_fetch_json }
-      RestClient::Request.stub(:execute) { response }
-    end
-
     subject { Localwiki::Client.new 'mockwiki.foo' }
 
     context "#page_by_name('Luna Park Cafe')" do
       it 'has content matching "amusement park"' do
         response = double('response')
-        response.stub(:body) { load_json 'page_fetch.json' }
-        RestClient::Request.should_receive(:execute
+        response.stub(:body) { @site_fetch_json }
+        conn = double('conn')
+        Faraday.should_receive(:new
           ).with(
-            {:method => :get,
-             :url => 'http://mockwiki.foo/api/page/Luna_Park_Cafe?format=json',
-             :timeout => 120}
+            { url: 'mockwiki.foo' }
+          ).and_return(conn)
+        conn.should_receive(:get
+          ).with(
+            'http://mockwiki.foo/api/site/1',
+            {format: 'json'}
           ).and_return(response)
+        response1 = double('response1')
+        response1.stub(:body) { load_json 'page_fetch.json' }
+        conn.should_receive(:get
+          ).with(
+            'http://mockwiki.foo/api/page/Luna_Park_Cafe', {format: 'json'}
+          ).and_return(response1)
         subject.page_by_name('Luna Park Cafe')['content'].should match(/amusement park/)
       end
     end
