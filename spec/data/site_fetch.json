@@ -1,0 +1,10 @@
+{
+    "domain": "mockwiki.foo",
+    "id": 1,
+    "language_code": "en-us",
+    "license": "<p>Except where otherwise noted, this content is licensed under a <a rel=\" license\" href=\"http://creativecommons.org/licenses/by/3.0/\">Creative Commons Attribution License</a>. See <a href=\"/Copyrights\">Copyrights.</p>",
+    "name": "Salt Lake Wiki",
+    "resource_uri": "/api/site/1",
+    "signup_tos": "I agree to release my contributions under the <a rel=\"license\" href=\"http://creativecommons.org/licenses/by/3.0/\" target=\"_blank\">Creative Commons-By license</a>, unless noted otherwise. See <a href=\"/Copyrights\" target=\"_blank\">Copyrights</a>.",
+    "time_zone": "America/Chicago"
+}

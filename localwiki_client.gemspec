@@ -1,6 +1,9 @@
+$LOAD_PATH.unshift(File.expand_path('./lib', File.dirname(__FILE__)))
+require 'localwiki/version'
+
 Gem::Specification.new do |s|
   s.name        = 'localwiki_client'
-  s.version     = '0.0.4'
+  s.version     = Localwiki::VERSION
   s.authors     = ["Brandon Faloona", "Seth Vincent"]
   s.description = %{ A thin client that wraps the Localwiki API. }
   s.summary     = "localwiki_client-#{s.version}"
@@ -10,7 +13,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.required_ruby_version = '>= 1.9.2'
 
-  s.add_dependency('rest-client')
+  s.add_dependency('faraday')
   s.add_dependency('json')
 
   s.add_development_dependency('rake')

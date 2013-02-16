@@ -3,9 +3,9 @@ require 'localwiki_client'
 require 'rspec/mocks'
 require 'helper'
 
-describe 'LocalwikiClient convenience class' do
+describe Localwiki::Client do
 
-  context 'initialize' do
+  context 'site' do
 
     before(:all) do
       @site_fetch_json = load_json 'site_fetch.json'
@@ -27,11 +27,22 @@ describe 'LocalwikiClient convenience class' do
         ).and_return(response)
     end
 
-    subject { LocalwikiClient.new 'mockwiki.foo' }
+    subject { Localwiki::Client.new 'mockwiki.foo' }
 
-    context '#site_name' do
-      it { subject.site_name.should eq 'Salt Lake Wiki' }
+    context 'attributes' do
+
+      context '#site_name' do
+        it { subject.site_name.should eq 'Salt Lake Wiki' }
+      end
+
+      context '#time_zone' do
+        it { subject.time_zone.should eq 'America/Chicago' }
+      end
+
+      context '#language_code' do
+        it { subject.language_code.should eq 'en-us'}
+      end
+
     end
-
   end
 end

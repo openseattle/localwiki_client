@@ -3,7 +3,7 @@ require 'localwiki_client'
 
 describe 'LIVE saltlakewiki.org' do
 
-  subject { LocalwikiClient.new 'saltlakewiki.org' }
+  subject { Localwiki::Client.new 'saltlakewiki.org' }
 
   context '#time_zone' do
     it {subject.time_zone.should eq 'America/Chicago' }
@@ -14,7 +14,7 @@ describe 'LIVE saltlakewiki.org' do
   end
 
   context '#total_resources("user")' do
-    it {subject.total_resources('user').to_i.should > 2}
+    it {subject.count('user').to_i.should > 2}
   end
 
 end

@@ -2,19 +2,20 @@ require 'rake'
 require 'rspec/core'
 require 'rspec/core/rake_task'
 
-desc 'Default: run tests'
-task :default => :test
+desc 'Default: run unit test specs'
+task :default => :spec
 
-desc "Run specs"
+desc 'Run all tests'
+task :all => [:spec, :integration, :flog_detail]
+
+desc "Run unit test specs"
 RSpec::Core::RakeTask.new do |t|
   t.pattern = "./spec/*_spec.rb"
   t.rspec_opts = ['-f d']
 end
 
-desc "Run tests"
-task :test do
-  Rake::Task['spec'].invoke
-end
+desc "Run unit test specs"
+task :test => [:spec]
 
 desc "Run integration tests"
 RSpec::Core::RakeTask.new(:integration) do |t|
