@@ -63,8 +63,7 @@ module Localwiki
     # create a specific resource
     # resources are "site", "page", "user", "file", "map", "tag", "page_tag"
     def create(resource,identifier,json)
-      uri = '/api/' + resource.to_s + '/' + identifier
-      http_post(uri, json)
+      raise 'Not Yet Implemented'
     end
 
     ##
@@ -128,8 +127,7 @@ module Localwiki
     end
 
     def http_post(uri, json)
-      full_url = 'http://' + @hostname + uri.to_s
-      @site.post full_url, json
+      raise 'Not Yet Implemented'
     end
 
     def http_put()
