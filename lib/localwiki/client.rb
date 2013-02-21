@@ -18,9 +18,9 @@ module Localwiki
     #
     #   LocalwikiClient.new 'seattlewiki.net'
     #
-    def initialize hostname
+    def initialize hostname, username=nil, apikey=nil
       @hostname = hostname
-      create_connection
+      create_connection username, apikey
       collect_site_details
     end
 
@@ -97,10 +97,23 @@ module Localwiki
     ##
     # create Faraday::Connection instance and set @site
     #
-    def create_connection
-      @site = Faraday.new :url => @hostname
+    def create_connection username, apikey
+      if (username.nil? || apikey.nil?) then
+        @site = Faraday.new(:url => @hostname) do |faraday|
+              faraday.request  :url_encoded             # form-encode POST params
+              faraday.response :logger                  # log requests to STDOUT
+              faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+        end
+      else 
+        @site = Faraday::Connection.new(:url => @hostname,
+              :headers => { :user => username, :password => apikey }) do |faraday|
+              faraday.request  :url_encoded             # form-encode POST params
+              faraday.response :logger                  # log requests to STDOUT
+              faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+        end
+      end  
     end
-
+  
     ##
     # http get request
     # url is formatted as http://[@hostname]/[thing(s)-you-want]?[params]
@@ -109,10 +122,11 @@ module Localwiki
       params.merge!({format: 'json'})
       full_url = 'http://' + @hostname + uri.to_s
       response = @site.get full_url, params
+
       JSON.parse(response.body)
     end
 
-    def http_post()
+    def http_post(uri, json)
       raise 'Not Yet Implemented'
     end
 
