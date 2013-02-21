@@ -18,8 +18,10 @@ module Localwiki
     #
     #   LocalwikiClient.new 'seattlewiki.net'
     #
-    def initialize hostname
+    def initialize hostname, user=nil, apikey=nil
       @hostname = hostname
+      @user = user
+      @apikey = apikey
       create_connection
       collect_site_details
     end
