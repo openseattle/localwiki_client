@@ -65,7 +65,8 @@ module Localwiki
     # create a specific resource
     # resources are "site", "page", "user", "file", "map", "tag", "page_tag"
     def create(resource,identifier,json)
-      raise 'Not Yet Implemented'
+      uri = '/api/' + resource.to_s + '/' + identifier
+      http_post(uri, json)
     end
 
     ##
@@ -100,7 +101,12 @@ module Localwiki
     # create Faraday::Connection instance and set @site
     #
     def create_connection
-      @site = Faraday.new :url => @hostname
+      #@site = Faraday.new :url => @hostname
+      @site = Faraday.new(:url => @hostname) do |faraday|
+        faraday.request  :url_encoded             # form-encode POST params
+        faraday.response :logger                  # log requests to STDOUT
+        faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+      end
     end
 
     ##
@@ -114,8 +120,15 @@ module Localwiki
       JSON.parse(response.body)
     end
 
-    def http_post()
-      raise 'Not Yet Implemented'
+    def http_post(uri, json)
+      full_url = 'http://' + @hostname + uri.to_s
+      
+      @site.post do |req|
+        req.url full_url
+        req.headers['Content-Type'] = 'application/json'
+        req.headers['Authorization'] = "ApiKey #{@user}:#{@apikey}"
+        req.body = json
+      end
     end
 
     def http_put()
