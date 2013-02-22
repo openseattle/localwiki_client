@@ -108,7 +108,7 @@ module Localwiki
         faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
       end
     end
-
+  
     ##
     # http get request
     # url is formatted as http://[@hostname]/[thing(s)-you-want]?[params]
@@ -117,6 +117,7 @@ module Localwiki
       params.merge!({format: 'json'})
       full_url = 'http://' + @hostname + uri.to_s
       response = @site.get full_url, params
+
       JSON.parse(response.body)
     end
 
