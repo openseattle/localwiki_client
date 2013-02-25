@@ -23,8 +23,8 @@ if test_env_vars_set?
         pagename = "TestPage#{SecureRandom.uuid}"
         response = @wiki.create('page', pagename, {})
         response.status.should eq 201
-        # puts response.headers.inspect
-        # puts response.headers["location"]
+        #puts response.headers.inspect
+        #puts response.headers["location"]
       end
 
     end

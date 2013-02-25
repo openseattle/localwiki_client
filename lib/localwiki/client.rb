@@ -64,8 +64,8 @@ module Localwiki
     ##
     # create a specific resource
     # resources are "site", "page", "user", "file", "map", "tag", "page_tag"
-    def create(resource,identifier,json)
-      uri = '/api/' + resource.to_s + '/' + identifier
+    def create(resource, json)
+      uri = '/api/' + resource.to_s + '/'
       http_post(uri, json)
     end
 
@@ -74,7 +74,8 @@ module Localwiki
     # resources are "site", "page", "user", "file", "map", "tag", "page_tag"
     # identifier is id, pagename, slug, etc.
     def update(resource,identifier,json)
-      raise 'Not Yet Implemented'
+      uri = '/api/' + resource.to_s + '/' + identifier
+      http_put(uri, json)  
     end
 
     ##
@@ -82,7 +83,8 @@ module Localwiki
     # resources are "site", "page", "user", "file", "map", "tag", "page_tag"
     # identifier is id, pagename, slug, etc.
     def delete(resource,identifier)
-      raise 'Not Yet Implemented'
+      uri = '/api/' + resource.to_s + '/' + identifier
+      http_delete(uri)
     end
 
     private
@@ -101,12 +103,7 @@ module Localwiki
     # create Faraday::Connection instance and set @site
     #
     def create_connection
-      #@site = Faraday.new :url => @hostname
-      @site = Faraday.new(:url => @hostname) do |faraday|
-        faraday.request  :url_encoded             # form-encode POST params
-        faraday.response :logger                  # log requests to STDOUT
-        faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
-      end
+      @site = Faraday.new :url => @hostname
     end
   
     ##
@@ -117,10 +114,9 @@ module Localwiki
       params.merge!({format: 'json'})
       full_url = 'http://' + @hostname + uri.to_s
       response = @site.get full_url, params
-
       JSON.parse(response.body)
     end
-
+    
     def http_post(uri, json)
       full_url = 'http://' + @hostname + uri.to_s
       
@@ -131,14 +127,26 @@ module Localwiki
         req.body = json
       end
     end
-
-    def http_put()
-      raise 'Not Yet Implemented'
+    
+    def http_put(uri, json)
+      full_url = 'http://' + @hostname + uri.to_s
+      
+      @site.put do |req|
+        req.url full_url
+        req.headers['Content-Type'] = 'application/json'
+        req.headers['Authorization'] = "ApiKey #{@user}:#{@apikey}"
+        req.body = json
+      end
     end
 
-    def http_delete()
-      raise 'Not Yet Implemented'
-    end
+    def http_delete(uri)
+      full_url = 'http://' + @hostname + uri.to_s
 
+      @site.delete do |req|
+        req.url full_url
+        req.headers['Content-Type'] = 'application/json'
+        req.headers['Authorization'] = "ApiKey #{@user}:#{@apikey}"
+      end
+    end
   end
 end
