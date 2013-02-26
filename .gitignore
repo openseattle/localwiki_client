@@ -1,2 +1,4 @@
+.yardoc
+doc/
 .idea
 Gemfile.lock
