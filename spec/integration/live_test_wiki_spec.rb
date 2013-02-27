@@ -12,19 +12,35 @@ if test_env_vars_set?
                                     ENV['localwiki_client_apikey']
       }
 
-    context '#time_zone' do
-      it {@wiki.time_zone.should eq 'America/Chicago' }
-    end
+    context "CRUD methods" do
 
-    context "#create('page', 'TestPage<uuid>')" do
-
-      it 'response.status is 201' do
+      before(:all) do
         require 'securerandom'
-        pagename = "TestPage#{SecureRandom.uuid}"
-        response = @wiki.create('page', pagename, {})
+        @pagename = "TestPage#{SecureRandom.uuid}"
+      end
+
+      it "#create('page', 'TestPage<uuid>') response.status is 201" do
+        json = {name: @pagename, content: '<p>Created!</p>'}.to_json
+        response = @wiki.create('page', json)
         response.status.should eq 201
-        # puts response.headers.inspect
-        # puts response.headers["location"]
+      end
+
+      it "#read('page', 'TestPage<uuid>') response.status is 200" do
+        response = @wiki.read('page', @pagename)
+        response["content"].should match(/Created!/)
+      end
+
+      it "#update('page', 'TestPage<uuid>', json) response.status is 204" do
+        json = {content: '<p>Updated!</p>'}.to_json
+        response = @wiki.update('page', @pagename, json)
+        response.status.should eq 204
+        @wiki.read('page', @pagename)["content"].should match(/Updated!/)
+      end
+
+      it "#delete('page', 'TestPage<uuid>') response.status is 204" do
+        response = @wiki.delete('page', @pagename)
+        response.status.should eq 204
+        @wiki.read('page', @pagename).status.should eq 404
       end
 
     end
