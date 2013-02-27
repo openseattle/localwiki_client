@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.9.2'
 
   s.add_dependency('faraday')
-  s.add_dependency('json')
+  s.add_dependency('json_pure')
 
   s.add_development_dependency('rake')
   s.add_development_dependency('rspec', '>= 2.9.0')

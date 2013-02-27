@@ -1,5 +1,5 @@
 require 'faraday'
-require 'json/pure'
+require 'json'
 
 module Localwiki
 
