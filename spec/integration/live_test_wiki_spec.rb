@@ -19,7 +19,7 @@ if test_env_vars_set?
         @pagename = "TestPage#{SecureRandom.uuid}"
       end
 
-      it "#create('page', 'TestPage<uuid>') response.status is 201" do
+      it "#create('page', json) response.status is 201" do
         json = {name: @pagename, content: '<p>Created!</p>'}.to_json
         response = @wiki.create('page', json)
         response.status.should eq 201
