@@ -130,7 +130,7 @@ module Localwiki
       params.merge!({format: 'json'})
       full_url = 'http://' + @hostname + uri.to_s
       response = @site.get full_url, params
-      JSON.parse(response.body)
+      JSON.parse(response.body) rescue response
     end
     
     ##
