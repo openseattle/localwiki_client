@@ -70,6 +70,7 @@ module Localwiki
       uri = '/api/' + resource.to_s + '/' + identifier
       http_get(uri,params)
     end
+    alias_method :read, :fetch
 
     ##
     # create a specific resource
