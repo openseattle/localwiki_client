@@ -1,5 +1,4 @@
-$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-require 'localwiki_client'
+require File.expand_path("../helper", __FILE__)
 
 describe 'LIVE saltlakewiki.org' do
 
@@ -18,3 +17,4 @@ describe 'LIVE saltlakewiki.org' do
   end
 
 end
+

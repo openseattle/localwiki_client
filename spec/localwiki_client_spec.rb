@@ -1,36 +1,46 @@
-$LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
-require 'localwiki_client'
-require 'rspec/mocks'
-require 'helper'
+require File.expand_path("../helper", __FILE__)
 
-describe 'LocalwikiClient convenience class' do
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/fixtures/cassettes'
+  c.hook_into :webmock
+  # c.debug_logger = File.open('spec/fixtures/cassettes/debug_vcr.log', 'w')
+end
 
-  context 'initialize' do
+describe 'LocalwikiClient' do
 
-    before(:all) do
-      @site_fetch_json = load_json 'site_fetch.json'
-    end
+  before(:all) do
+    VCR.insert_cassette 'localwiki_client', :record => :new_episodes
+    @wiki = Localwiki::Client.new 'ec2-54-234-151-52.compute-1.amazonaws.com'
+  end
 
-    before(:each) do
-      response = double('response')
-      response.stub(:body) { @site_fetch_json }
-      conn = double('conn')
-      Faraday.should_receive(:new
-        ).with(
-          { url: 'mockwiki.foo' }
-        ).and_return(conn)
-      # Faraday::Connection.any_instance
-      conn.should_receive(:get
-        ).with(
-          'http://mockwiki.foo/api/site/1',
-          {format: 'json'}
-        ).and_return(response)
-    end
+  after(:all) do
+    VCR.eject_cassette
+  end
 
-    subject { LocalwikiClient.new 'mockwiki.foo' }
+  context 'attributes' do
 
     context '#site_name' do
-      it { subject.site_name.should eq 'Salt Lake Wiki' }
+      it { @wiki.site_name.should eq 'example.com' }
+    end
+
+    context '#time_zone' do
+      it { @wiki.time_zone.should eq 'America/Chicago' }
+    end
+
+    context '#language_code' do
+      it { @wiki.language_code.should eq 'en-us'}
+    end
+
+    context '#page_by_name' do
+      it 'returns page body'
+    end
+
+    context '#count' do
+      it 'returns a Fixnum count of the resource'
+    end
+
+    context '#list' do
+      it 'returns list of items matching'
     end
 
   end
