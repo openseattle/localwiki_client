@@ -1,15 +1,4 @@
-$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
 require File.expand_path("../helper", __FILE__)
-require 'localwiki_client'
-require 'webmock/rspec'
-require 'vcr'
-
-VCR.configure do |c|
-  c.cassette_library_dir = 'spec/fixtures/cassettes'
-  c.hook_into :webmock
-  # c.debug_logger = File.open('spec/fixtures/cassettes/debug_vcr.log', 'w')
-end
-
 
 describe 'LocalwikiClient' do
 

@@ -1,6 +1,12 @@
+$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
+require 'localwiki_client'
+require 'webmock/rspec'
+require 'vcr'
 
-def load_json filename
-  File.open(File.expand_path("../data", __FILE__) + "/#{filename}", 'r').read
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/fixtures/cassettes'
+  c.hook_into :webmock
+  # c.debug_logger = File.open('spec/fixtures/cassettes/debug_vcr.log', 'w')
 end
 
 def test_env_vars_set?
