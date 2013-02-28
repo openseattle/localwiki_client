@@ -1,6 +1,4 @@
-$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-require File.expand_path("../../helper", __FILE__)
-require 'localwiki_client'
+require File.expand_path("../helper", __FILE__)
 
 if test_env_vars_set?
 

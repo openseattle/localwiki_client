@@ -19,7 +19,7 @@ task :test => [:spec]
 
 desc "Run integration tests"
 RSpec::Core::RakeTask.new(:integration) do |t|
-  t.pattern = "spec/integration/*_spec.rb"
+  t.pattern = "integration/*_spec.rb"
   t.rspec_opts = ['-f d']
 end
 
