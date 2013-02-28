@@ -1,5 +1,5 @@
 require 'faraday'
-require 'json/pure'
+require 'json'
 
 module Localwiki
 
@@ -70,6 +70,7 @@ module Localwiki
       uri = '/api/' + resource.to_s + '/' + identifier
       http_get(uri,params)
     end
+    alias_method :read, :fetch
 
     ##
     # create a specific resource
@@ -129,7 +130,7 @@ module Localwiki
       params.merge!({format: 'json'})
       full_url = 'http://' + @hostname + uri.to_s
       response = @site.get full_url, params
-      JSON.parse(response.body)
+      JSON.parse(response.body) rescue response
     end
     
     ##

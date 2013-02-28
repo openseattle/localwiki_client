@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/TestPage30bb031f-e69e-4fa0-a544-0af4850e4221?format=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 28 Feb 2013 00:47:04 GMT
+      Server:
+      - Apache/2.2.22 (Ubuntu)
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Allow-Methods:
+      - POST,GET,OPTIONS,PUT,DELETE
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/vnd.api.v1+json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"content": "<p>Created!</p>", "id": 148, "map": null, "name": "TestPage30bb031f-e69e-4fa0-a544-0af4850e4221",
+        "page_tags": null, "resource_uri": "/api/page/TestPage30bb031f-e69e-4fa0-a544-0af4850e4221",
+        "slug": "testpage30bb031f-e69e-4fa0-a544-0af4850e4221"}'
+    http_version: 
+  recorded_at: Thu, 28 Feb 2013 00:46:51 GMT
+recorded_with: VCR 2.4.0

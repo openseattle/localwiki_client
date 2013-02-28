@@ -19,7 +19,7 @@ task :test => [:spec]
 
 desc "Run integration tests"
 RSpec::Core::RakeTask.new(:integration) do |t|
-  t.pattern = "spec/integration/*_spec.rb"
+  t.pattern = "integration/*_spec.rb"
   t.rspec_opts = ['-f d']
 end
 
@@ -31,4 +31,12 @@ end
 desc "Detailed Flog report! (*nix only)"
 task :flog_detail do
   system('find lib -name \*.rb | xargs flog -d')
+end
+
+desc "Clean up VCR fixtures and logs"
+task :clean_vcr do
+  files = Dir[File.expand_path("../spec/fixtures/cassettes/*", __FILE__)].map do |file|
+    file if File.file?(file)
+  end
+  files.each { |file| File.delete(file) }
 end
