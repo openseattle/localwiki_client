@@ -99,7 +99,11 @@ module Localwiki
     # @param identifier is id, pagename, slug, etc.
     # @example wiki.delete('page', '<page tag>')
     def delete(resource,identifier)
+<<<<<<< HEAD
       uri = '/api/' + resource.to_s + '/' + identifier
+=======
+      uri = '/api/' + resource + '/' + identifier
+>>>>>>> Initial commit
       http_delete(uri)
     end
 
@@ -119,7 +123,12 @@ module Localwiki
     # create Faraday::Connection instance and set @site
     #
     def create_connection
-      @site = Faraday.new :url => @hostname
+      #@site = Faraday.new :url => @hostname
+      @site = Faraday.new(:url => @hostname) do |faraday|
+        faraday.request  :url_encoded            # form-encoded POST params          
+        faraday.response :logger                 # log requests to STDOUT
+        faraday.adapter  Faraday.default_adapter # make requests with Net::HTTP
+      end  
     end
   
     ##
@@ -130,7 +139,10 @@ module Localwiki
       params.merge!({format: 'json'})
       full_url = 'http://' + @hostname + uri.to_s
       response = @site.get full_url, params
+<<<<<<< HEAD
       JSON.parse(response.body) rescue response
+======
+>>>>>>> Initial commit
     end
     
     ##
@@ -163,17 +175,22 @@ module Localwiki
       end
     end
 
+<<<<<<< HEAD
     ##
     # http delete request
     # @param uri /api/<resource>/<resource identifier>
+=======
     def http_delete(uri)
       full_url = 'http://' + @hostname + uri.to_s
-
-      @site.delete do |req|
-        req.url full_url
-        req.headers['Content-Type'] = 'application/json'
-        req.headers['Authorization'] = "ApiKey #{@user}:#{@apikey}"
-      end
+      response = @site.delete full_url
+      response = @site.delete do |site|
+          site.url full_url
+          site.headers['Content-Type'] = 'application/json'
+          site.headers['Authorization'] = "ApiKey #{@user}:#{@apikey}"
+        end
+      response.status
+    end
+>>>>>>> Initial commit
     end
   end
 end
