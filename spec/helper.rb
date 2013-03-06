@@ -4,7 +4,7 @@ require 'webmock/rspec'
 require 'vcr'
 
 VCR.configure do |c|
-  c.cassette_library_dir = 'spec/fixtures/cassettes'
+  c.cassette_library_dir = File.expand_path("fixtures/cassettes", File.dirname(__FILE__))
   c.hook_into :webmock
   # c.debug_logger = File.open('spec/fixtures/cassettes/debug_vcr.log', 'w')
 end
