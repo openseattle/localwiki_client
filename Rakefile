@@ -1,6 +1,7 @@
 require 'rake'
 require 'rspec/core'
 require 'rspec/core/rake_task'
+require 'yard'
 
 desc 'Default: run unit test specs'
 task :default => :spec
@@ -40,3 +41,6 @@ task :clean_vcr do
   end
   files.each { |file| File.delete(file) }
 end
+
+desc "Generate YARD documentation for files in ['lib/**/*.rb']"
+YARD::Rake::YardocTask.new(:yard)
