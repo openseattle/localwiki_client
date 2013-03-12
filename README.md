@@ -38,6 +38,12 @@ Contributing
 To get your improvements included, please fork and submit a pull request.
 Bugs and/or failing tests are very appreciated.
 
+Contributors
+------------
+Seth Vincent
+Brandon Faloona
+Helen Canzler
+
 LICENSE
 -------
 
