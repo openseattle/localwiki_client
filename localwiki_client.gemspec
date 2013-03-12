@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency('vcr')
   s.add_development_dependency('webmock', '>= 1.8.0', '< 1.10')
   s.add_development_dependency('yard')
-  s.add_development_dependency('redcarpet')
+  s.add_development_dependency('kramdown')
 
   s.add_development_dependency('rb-fsevent')
 
