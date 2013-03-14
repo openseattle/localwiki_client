@@ -45,6 +45,26 @@ describe 'LocalwikiClient' do
         response.status.should eq 204
       end
     end
-
+    
+    it "#read('page', pagename_does_not_exist) response.status is 404" do
+      VCR.use_cassette 'basic_crud_read_fail', :match_requests_on => [:method, @path_matcher] do
+        response = @wiki.read('page', @pagename)
+        response.status.should eq 404
+      end
+    end
+        
+    it "#delete('page', pagename_does_not_exit) response.status is 404" do
+      VCR.use_cassette 'basic_crud_delete_fail', :match_requests_on => [:method, @path_matcher] do
+        response = @wiki.delete('page', @pagename)
+        response.status.should eq 404
+      end
+    end
+    
+    it "#update('page', page_does_not_exist, json), page is created, response.status is 201" do
+      VCR.use_cassette 'basic_crud_update_create_success', :match_requests_on => [:method, @path_matcher] do
+        response = @wiki.update('page', @pagename, {content: '<Update non-existent page>'}.to_json)
+        response.status.should eq 201
+      end
+    end
   end
 end
