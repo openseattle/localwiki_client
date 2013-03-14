@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/site/1?format=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.6
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 01 Mar 2013 05:40:29 GMT
+      Server:
+      - Apache/2.2.22 (Ubuntu)
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Allow-Methods:
+      - POST,GET,OPTIONS,PUT,DELETE
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/vnd.api.v1+json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"domain": "example.com", "id": 1, "language_code": "en-us", "license":
+        "<p>Except where otherwise noted, this content is licensed under a <a rel=\"license\"
+        href=\"http://creativecommons.org/licenses/by/3.0/\">Creative Commons Attribution
+        License</a>. See <a href=\"/Copyrights\">Copyrights.</p>", "name": "example.com",
+        "resource_uri": "/api/site/1", "signup_tos": "I agree to release my contributions
+        under the <a rel=\"license\" href=\"http://creativecommons.org/licenses/by/3.0/\"
+        target=\"_blank\">Creative Commons-By license</a>, unless noted otherwise.
+        See <a href=\"/Copyrights\" target=\"_blank\">Copyrights</a>.", "time_zone":
+        "America/Chicago"}'
+    http_version: 
+  recorded_at: Fri, 01 Mar 2013 05:40:20 GMT
+- request:
+    method: post
+    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/
+    body:
+      encoding: UTF-8
+      string: ! '{"name":"TestPage85b24ba8-e658-451f-96d6-871960dc1cb3","content":"<p>Created!</p>"}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.6
+      Content-Type:
+      - application/json
+      Authorization:
+      - ! 'ApiKey :'
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 401
+      message: UNAUTHORIZED
+    headers:
+      Date:
+      - Fri, 01 Mar 2013 05:40:31 GMT
+      Server:
+      - Apache/2.2.22 (Ubuntu)
+      Vary:
+      - Cookie,Accept-Encoding
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Allow-Methods:
+      - POST,GET,OPTIONS,PUT,DELETE
+      Set-Cookie:
+      - sessionid=a8eee43c225ed36a8655a0eada04bf40; expires=Fri, 15-Mar-2013 05:40:31
+        GMT; Max-Age=1209600; Path=/
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Fri, 01 Mar 2013 05:40:22 GMT
+recorded_with: VCR 2.4.0
