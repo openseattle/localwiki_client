@@ -102,7 +102,7 @@ module Localwiki
       uri = '/api/' + resource.to_s + '/' + identifier
       http_delete(uri)
     end
-
+    
     private
 
     ##
