@@ -103,22 +103,6 @@ module Localwiki
       http_delete(uri)
     end
     
-    # Returns the number of versions.
-    def fetch_num_revision(identifier)
-      history = http_get_version(identifier)
-      #history["objects"].length
-      history.length
-    end
-    
-    # List revisions with most in anti-chronological order.
-    def list_revisions(identifier)
-      history = http_get_version(identifier)
-      #history['objects'].each do |revision|
-      history.each do |revision|
-        puts revision # display in pretty format if you want
-      end
-    end
-    
     private
 
     ##
@@ -147,12 +131,6 @@ module Localwiki
       full_url = 'http://' + @hostname + uri.to_s
       response = @site.get full_url, params
       JSON.parse(response.body) rescue response
-    end
-    
-    # Get page history
-    def http_get_version(identifier, params={})
-      uri = '/api/page_version/?name=' + identifier
-      http_get(uri,params)['objects']
     end
     
     ##
