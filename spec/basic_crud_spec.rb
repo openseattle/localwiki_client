@@ -1,4 +1,5 @@
-require File.expand_path("../helper", __FILE__)
+require File.expand_path("../helper.rb", __FILE__)
+require 'localwiki_client'
 
 describe 'LocalwikiClient' do
 
@@ -19,6 +20,17 @@ describe 'LocalwikiClient' do
   end
 
   context "CRUD method" do
+
+    it "#fetch_version() compare == (expected + 1)" do 
+      expected = 0
+      VCR.use_cassette 'basic_crud_version_success1' do
+        expected = @wiki.fetch_version('page_version', 'bears')["objects"].length + 1     
+      end
+      VCR.use_cassette 'basic_crud_version_success2' do    
+        @wiki.update('page', 'bears', {content: '<foo>'}.to_json)
+        @wiki.fetch_version('page_version', 'bears')["objects"].length.should eq expected
+      end  
+    end  
 
     it "#create('page', json) response.status is 201" do
       response = @wiki.create('page', {name: @pagename, content: '<p>Created!</p>'}.to_json)

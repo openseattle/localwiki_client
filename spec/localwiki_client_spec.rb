@@ -41,7 +41,7 @@ describe 'LocalwikiClient' do
 
     context '#list' do
       it 'returns list of items matching'
+      #VCR.use_cassette 'basic_crud_success', :record => new_episodes do
     end
-
   end
 end

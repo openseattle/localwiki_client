@@ -1,0 +1,114 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page?format=json&name=Dogs
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 09 Mar 2013 23:30:51 GMT
+      Server:
+      - Apache/2.2.22 (Ubuntu)
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Allow-Methods:
+      - POST,GET,OPTIONS,PUT,DELETE
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/vnd.api.v1+json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"meta": {"limit": 20, "next": null, "offset": 0, "previous": null,
+        "total_count": 0}, "objects": []}'
+    http_version: 
+  recorded_at: Sat, 09 Mar 2013 23:30:28 GMT
+- request:
+    method: put
+    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/Dogs
+    body:
+      encoding: UTF-8
+      string: ! '{"content":"<foo>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - ! 'ApiKey :'
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 401
+      message: UNAUTHORIZED
+    headers:
+      Date:
+      - Sat, 09 Mar 2013 23:32:04 GMT
+      Server:
+      - Apache/2.2.22 (Ubuntu)
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Allow-Methods:
+      - POST,GET,OPTIONS,PUT,DELETE
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Sat, 09 Mar 2013 23:31:40 GMT
+- request:
+    method: get
+    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page?format=json&name=Dogs
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 09 Mar 2013 23:32:04 GMT
+      Server:
+      - Apache/2.2.22 (Ubuntu)
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Allow-Methods:
+      - POST,GET,OPTIONS,PUT,DELETE
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/vnd.api.v1+json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"meta": {"limit": 20, "next": null, "offset": 0, "previous": null,
+        "total_count": 0}, "objects": []}'
+    http_version: 
+  recorded_at: Sat, 09 Mar 2013 23:31:41 GMT
+recorded_with: VCR 2.4.0
