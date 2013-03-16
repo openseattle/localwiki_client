@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/TestPage1fcb02c7-6194-44eb-9d8f-96d099385f6a
+    body:
+      encoding: UTF-8
+      string: ! '{"content":"<foo>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - ! 'ApiKey :'
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 401
+      message: UNAUTHORIZED
+    headers:
+      Date:
+      - Tue, 05 Mar 2013 05:26:57 GMT
+      Server:
+      - Apache/2.2.22 (Ubuntu)
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Allow-Methods:
+      - POST,GET,OPTIONS,PUT,DELETE
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Tue, 05 Mar 2013 05:26:39 GMT
+recorded_with: VCR 2.4.0

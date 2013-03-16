@@ -14,11 +14,14 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.9.2'
 
   s.add_dependency('faraday')
-  s.add_dependency('json')
+  s.add_dependency('json_pure')
 
   s.add_development_dependency('rake')
   s.add_development_dependency('rspec', '>= 2.9.0')
   s.add_development_dependency('rspec-mocks', '>= 2.9.0')
+  s.add_development_dependency('vcr')
+  s.add_development_dependency('webmock')
+
   s.add_development_dependency('rb-fsevent')
 
   unless ENV['TRAVIS'] == 'true'

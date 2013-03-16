@@ -1,0 +1,109 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page_version?format=json&name=Dogs
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 15 Mar 2013 02:31:32 GMT
+      Server:
+      - Apache/2.2.22 (Ubuntu)
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Allow-Methods:
+      - POST,GET,OPTIONS,PUT,DELETE
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/vnd.api.v1+json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"meta": {"limit": 20, "next": "/api/page_version?offset=20&limit=20&name=Dogs&format=json",
+        "offset": 0, "previous": null, "total_count": 25}, "objects": [{"content":
+        "<foo>", "history_comment": null, "history_date": "2013-03-14T21:25:28.081400",
+        "history_id": 640, "history_type": 1, "history_user": "/api/user/7", "history_user_ip":
+        "69.91.177.159", "id": 200, "name": "Dogs", "resource_uri": "/api/page_version/640",
+        "slug": "dogs"}, {"content": "<foo>", "history_comment": null, "history_date":
+        "2013-03-14T21:14:26.401120", "history_id": 637, "history_type": 1, "history_user":
+        "/api/user/7", "history_user_ip": "69.91.177.159", "id": 200, "name": "Dogs",
+        "resource_uri": "/api/page_version/637", "slug": "dogs"}, {"content": "<foo>",
+        "history_comment": null, "history_date": "2013-03-14T21:13:35.540970", "history_id":
+        634, "history_type": 1, "history_user": "/api/user/7", "history_user_ip":
+        "69.91.177.159", "id": 200, "name": "Dogs", "resource_uri": "/api/page_version/634",
+        "slug": "dogs"}, {"content": "<foo>", "history_comment": null, "history_date":
+        "2013-03-14T21:12:47.419631", "history_id": 631, "history_type": 1, "history_user":
+        "/api/user/7", "history_user_ip": "69.91.177.159", "id": 200, "name": "Dogs",
+        "resource_uri": "/api/page_version/631", "slug": "dogs"}, {"content": "<foo>",
+        "history_comment": null, "history_date": "2013-03-14T21:12:10.544174", "history_id":
+        628, "history_type": 1, "history_user": "/api/user/7", "history_user_ip":
+        "69.91.177.159", "id": 200, "name": "Dogs", "resource_uri": "/api/page_version/628",
+        "slug": "dogs"}, {"content": "<foo>", "history_comment": null, "history_date":
+        "2013-03-14T21:11:40.400628", "history_id": 625, "history_type": 1, "history_user":
+        "/api/user/7", "history_user_ip": "69.91.177.159", "id": 200, "name": "Dogs",
+        "resource_uri": "/api/page_version/625", "slug": "dogs"}, {"content": "<foo>",
+        "history_comment": null, "history_date": "2013-03-14T21:10:01.138575", "history_id":
+        622, "history_type": 1, "history_user": "/api/user/7", "history_user_ip":
+        "69.91.177.159", "id": 200, "name": "Dogs", "resource_uri": "/api/page_version/622",
+        "slug": "dogs"}, {"content": "<foo>", "history_comment": null, "history_date":
+        "2013-03-14T21:09:43.133866", "history_id": 619, "history_type": 1, "history_user":
+        "/api/user/7", "history_user_ip": "69.91.177.159", "id": 200, "name": "Dogs",
+        "resource_uri": "/api/page_version/619", "slug": "dogs"}, {"content": "<foo>",
+        "history_comment": null, "history_date": "2013-03-14T21:07:17.032810", "history_id":
+        616, "history_type": 1, "history_user": "/api/user/7", "history_user_ip":
+        "69.91.177.159", "id": 200, "name": "Dogs", "resource_uri": "/api/page_version/616",
+        "slug": "dogs"}, {"content": "<foo>", "history_comment": null, "history_date":
+        "2013-03-14T21:07:01.837005", "history_id": 613, "history_type": 1, "history_user":
+        "/api/user/7", "history_user_ip": "69.91.177.159", "id": 200, "name": "Dogs",
+        "resource_uri": "/api/page_version/613", "slug": "dogs"}, {"content": "<foo>",
+        "history_comment": null, "history_date": "2013-03-14T21:01:46.471494", "history_id":
+        610, "history_type": 1, "history_user": "/api/user/7", "history_user_ip":
+        "69.91.177.159", "id": 200, "name": "Dogs", "resource_uri": "/api/page_version/610",
+        "slug": "dogs"}, {"content": "<foo>", "history_comment": null, "history_date":
+        "2013-03-14T20:58:46.468582", "history_id": 609, "history_type": 1, "history_user":
+        "/api/user/7", "history_user_ip": "69.91.177.159", "id": 200, "name": "Dogs",
+        "resource_uri": "/api/page_version/609", "slug": "dogs"}, {"content": "<foo>",
+        "history_comment": null, "history_date": "2013-03-14T20:56:58.953049", "history_id":
+        608, "history_type": 1, "history_user": "/api/user/7", "history_user_ip":
+        "69.91.177.159", "id": 200, "name": "Dogs", "resource_uri": "/api/page_version/608",
+        "slug": "dogs"}, {"content": "<foo>", "history_comment": null, "history_date":
+        "2013-03-14T19:56:16.118941", "history_id": 606, "history_type": 1, "history_user":
+        "/api/user/7", "history_user_ip": "69.91.177.159", "id": 200, "name": "Dogs",
+        "resource_uri": "/api/page_version/606", "slug": "dogs"}, {"content": "<foo2>",
+        "history_comment": null, "history_date": "2013-03-10T17:26:54.036293", "history_id":
+        577, "history_type": 1, "history_user": "/api/user/7", "history_user_ip":
+        "24.18.226.252", "id": 200, "name": "Dogs", "resource_uri": "/api/page_version/577",
+        "slug": "dogs"}, {"content": "<foo>", "history_comment": null, "history_date":
+        "2013-03-10T17:25:40.524698", "history_id": 576, "history_type": 0, "history_user":
+        "/api/user/7", "history_user_ip": "24.18.226.252", "id": 200, "name": "Dogs",
+        "resource_uri": "/api/page_version/576", "slug": "dogs"}, {"content": "<foo>",
+        "history_comment": null, "history_date": "2013-03-10T17:24:43.370333", "history_id":
+        575, "history_type": 2, "history_user": "/api/user/7", "history_user_ip":
+        "24.18.226.252", "id": 199, "name": "Dogs", "resource_uri": "/api/page_version/575",
+        "slug": "dogs"}, {"content": "<foo>", "history_comment": null, "history_date":
+        "2013-03-10T17:24:41.948790", "history_id": 574, "history_type": 1, "history_user":
+        "/api/user/7", "history_user_ip": "24.18.226.252", "id": 199, "name": "Dogs",
+        "resource_uri": "/api/page_version/574", "slug": "dogs"}, {"content": "<foo>",
+        "history_comment": null, "history_date": "2013-03-10T17:23:03.419298", "history_id":
+        573, "history_type": 0, "history_user": "/api/user/7", "history_user_ip":
+        "24.18.226.252", "id": 199, "name": "Dogs", "resource_uri": "/api/page_version/573",
+        "slug": "dogs"}, {"content": "<foo>", "history_comment": null, "history_date":
+        "2013-03-10T17:22:28.482109", "history_id": 572, "history_type": 2, "history_user":
+        "/api/user/7", "history_user_ip": "24.18.226.252", "id": 198, "name": "Dogs",
+        "resource_uri": "/api/page_version/572", "slug": "dogs"}]}'
+    http_version: 
+  recorded_at: Fri, 15 Mar 2013 02:31:03 GMT
+recorded_with: VCR 2.4.0

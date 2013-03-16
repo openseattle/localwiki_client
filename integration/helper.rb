@@ -1,14 +1,11 @@
-$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
+$LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
 require 'localwiki_client'
-require 'vcr'
-require 'webmock/rspec'
 
-
-VCR.configure do |c|
-  c.cassette_library_dir = 'spec/fixtures/cassettes'
-  c.hook_into :webmock
-  # c.debug_logger = File.open('spec/fixtures/cassettes/debug_vcr.log', 'w')
-end
+#VCR.configure do |c|
+#  c.ignore_request do |request|
+#      true
+#    end
+#end
 
 def test_env_vars_set?
   return true if ENV['localwiki_client_user'] && ENV['localwiki_client_apikey']
