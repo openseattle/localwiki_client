@@ -4,17 +4,19 @@ require 'localwiki/version'
 Gem::Specification.new do |s|
   s.name        = 'localwiki_client'
   s.version     = Localwiki::VERSION
-  s.authors     = ["Brandon Faloona", "Seth Vincent"]
+  s.authors     = ["Matt Adkins"]
   s.description = %{ A thin client that wraps the Localwiki API. }
   s.summary     = "localwiki_client-#{s.version}"
-  s.email       = 'brandon@faloona.net'
-  s.homepage    = "http://github.com/bfaloona/localwiki_client"
+  s.email       = 'matthew.t.adkins@gmail.com'
+  s.homepage    = "http://github.com/adkinsm/localwiki_client"
   s.license     = 'MIT'
   s.platform    = Gem::Platform::RUBY
   s.required_ruby_version = '>= 1.9.2'
 
   s.add_dependency('faraday')
   s.add_dependency('json_pure')
+
+  s.executables = ["localwiki_client"]
 
   s.add_development_dependency('rake')
   s.add_development_dependency('rspec', '>= 2.9.0')

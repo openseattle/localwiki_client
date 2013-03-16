@@ -48,9 +48,10 @@ describe 'LocalwikiClient' do
 	  
 	it "#version('page', pagename) response.status is 204" do
       VCR.use_cassette 'basic_crud_version_success', :match_requests_on => [:method, @path_matcher] do
-        response = @wiki.update('page', @pagename, {content: '<foo>'}.to_json)
-        num_objects
-        response.status.should_not eq 0
+        @wiki.create('page', {name: @pagename, content: '<p>Created!</p>'}.to_json)
+        num_objects.should eq 1
+        @wiki.update('page', @pagename, {content: '<foo>'}.to_json)
+        num_objects.should eq 2
       end
 
     end

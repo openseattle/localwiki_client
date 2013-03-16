@@ -1,0 +1,9 @@
+
+
+
+begin
+  require 'mygem'
+rescue LoadError
+  require 'rubygems'
+  require 'mygem'
+end

@@ -80,63 +80,6 @@ module Localwiki
 
 
 
-    def fetch_version(resource,identifier,params={})
-      uri = '/api/' + resource.to_s + '?name=' + identifier
-      the_hash = http_get(uri,params)
-      num_objects = the_hash["objects"].length
-      puts "XXXXXXXXXXXXXXXXXXXXXXXXX"
-      puts "The number of versions of this page is:  #{num_objects}"
-      puts "XXXXXXXXXXXXXXXXXXXXXXXXX"
-      puts "The versions of the page are listed below with the most recent first-"
-      puts "XXXXXXXXXXXXXXXXXXXXXXXXX"
-      the_hash["objects"][0..num_objects].each do |revision|
-        condensed_history_hash = revision.tap{|rev| rev.delete("content"); rev.delete("id"); rev.delete("name"); rev.delete("resource_uri"); rev.delete("slug")}
-        p condensed_history_hash, 'XXXXXXXXXXXXXXXXXXXXXXXXX'
-      end
-
-
-      val = the_hash["objects"][0]["history_date"]  #val finds history date (ex. 2013-03-01T12:34)
-      time_val = val.to_datetime
-      puts "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
-      puts "The date of change for this 1st revision is: #{time_val}"
-                                                    #DateTime.now is current date and time (ex. 2013-03-12T12:12) and -15 means you are subtracting 15 days from today.
-                                                    # x will return a value of true if (val) is within last 15 days and false if it is outside of 15 days.
-      date_range = time_val >= (DateTime.now-15)
-      puts date_range, ">>>>>>>>>>>If 'true' then revision was made in last 14 days.  If false then revision was made more than 14 days ago."
-
-
-      val = the_hash["objects"][1]["history_date"]  #val finds history date (ex. 2013-03-01T12:34)
-      time_val = val.to_datetime
-      puts "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
-      puts "The date of change for this 2nd revision is: #{time_val}"
-                                                    #DateTime.now is current date and time (ex. 2013-03-12T12:12) and -15 means you are subtracting 15 days from today.
-                                                    # x will return a value of true if (val) is within last 15 days and false if it is outside of 15 days.
-      date_range = time_val >= (DateTime.now-15)
-      puts date_range, ">>>>>>>>>>>If 'true' then revision was made in last 14 days.  If false then revision was made more than 14 days ago."
-
-
-      val = the_hash["objects"][2]["history_date"]  #val finds history date (ex. 2013-03-01T12:34)
-      time_val = val.to_datetime
-      puts "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
-      puts "The date of change for this 3rd revision is: #{time_val}"
-                                                    #DateTime.now is current date and time (ex. 2013-03-12T12:12) and -15 means you are subtracting 15 days from today.
-                                                    # x will return a value of true if (val) is within last 15 days and false if it is outside of 15 days.
-      date_range = time_val >= (DateTime.now-15)
-      puts date_range, ">>>>>>>>>>>If 'true' then revision was made in last 14 days.  If false then revision was made more than 14 days ago."
-
-
-      val = the_hash["objects"][6]["history_date"]  #val finds history date (ex. 2013-03-01T12:34)
-      time_val = val.to_datetime
-      puts "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
-      puts "The date of change for this 7th revision is: #{time_val}"
-                                                    #DateTime.now is current date and time (ex. 2013-03-12T12:12) and -15 means you are subtracting 15 days from today.
-                                                    # x will return a value of true if (val) is within last 15 days and false if it is outside of 15 days.
-      date_range = time_val >= (DateTime.now-15)
-      puts date_range, ">>>>>>>>>>>If 'true' then revision was made in last 14 days.  If false then revision was made more than 14 days ago."
-     end
-
-
-
 
     ##
     # create a specific resource
@@ -174,6 +117,56 @@ module Localwiki
 
     private
 
+    def fetch_version(resource,identifier,params={})
+      uri = '/api/' + resource.to_s + '?name=' + identifier
+      the_hash = http_get(uri,params)
+      num_objects = the_hash["objects"].length
+      the_hash["objects"][0..num_objects].each do |revision|
+        condensed_history_hash = revision.tap{|rev| rev.delete("content"); rev.delete("id"); rev.delete("name"); rev.delete("resource_uri"); rev.delete("slug")}
+      end
+
+
+      val = the_hash["objects"][0]["history_date"]  #val finds history date (ex. 2013-03-01T12:34)
+      time_val = val.to_datetime
+
+      #DateTime.now is current date and time (ex. 2013-03-12T12:12) and -15 means you are subtracting 15 days from today.
+      # x will return a value of true if (val) is within last 15 days and false if it is outside of 15 days.
+      date_range = time_val >= (DateTime.now-15)
+
+
+      val = the_hash["objects"][1]["history_date"]  #val finds history date (ex. 2013-03-01T12:34)
+      time_val = val.to_datetime
+      date_range = time_val >= (DateTime.now-15)
+
+      val = the_hash["objects"][2]["history_date"]  #val finds history date (ex. 2013-03-01T12:34)
+      time_val = val.to_datetime
+      date_range = time_val >= (DateTime.now-15)
+
+
+      val = the_hash["objects"][6]["history_date"]  #val finds history date (ex. 2013-03-01T12:34)
+      time_val = val.to_datetime
+      date_range = time_val >= (DateTime.now-15)
+    end
+
+    def fetch_history_author(resource,identifier,params={})
+      uri = '/api/' + resource.to_s + '?name=' + identifier
+      the_hash = http_get(uri,params)
+      the_hash["objects"][0]["history_user"]
+    end
+
+    def fetch_history_author_ip(resource,identifier,params={})
+      uri = '/api/' + resource.to_s + '?name=' + identifier
+      the_hash = http_get(uri,params)
+      the_hash["objects"][0]["history_user_ip"]
+    end
+
+
+    def fetch_history_type(resource,identifier,params={})
+      uri = '/api/' + resource.to_s + '?name=' + identifier
+      the_hash = http_get(uri,params)
+      the_hash["objects"][0]["history_type"]
+    end
+
 
 
     ##
@@ -205,29 +198,7 @@ module Localwiki
       JSON.parse(response.body) rescue response
     end
     
-    ##
-    # http get request
-    # @param uri /api/<resource>/<resource identifier>
-    # @param params is a hash of query string params
-    # @return [Hash] the parsed JSON object, otherwise the  http response object
-    def http_alt_get(uri,params={})
-      params.merge!({format: 'json'})
-      full_url = 'http://' + @hostname + uri.to_s
-      response = @site.get full_url, params
-      puts "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-      puts "The full url is: #{full_url}"
-      puts "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-      puts "And the response object is: "
-      puts response.inspect
-      puts "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-      my_hash = JSON.parse(response.body)  rescue response
-      puts "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-      puts "And the parsed body is: "
-      puts my_hash
-      puts "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-      my_hash
-    end
-    
+
     ##
     # http post request
     # @param uri /api/<resource>/
