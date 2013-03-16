@@ -34,13 +34,18 @@ task :flog_detail do
   system('find lib -name \*.rb | xargs flog -d')
 end
 
-desc "Clean up VCR fixtures and logs"
-task :clean_vcr do
+desc "Generate YARD documentation for files in ['lib/**/*.rb']"
+YARD::Rake::YardocTask.new(:yard)
+
+desc "Delete VCR fixtures and logs"
+task :vcr_purge do
   files = Dir[File.expand_path("../spec/fixtures/cassettes/*", __FILE__)].map do |file|
     file if File.file?(file)
   end
   files.each { |file| File.delete(file) }
 end
 
-desc "Generate YARD documentation for files in ['lib/**/*.rb']"
-YARD::Rake::YardocTask.new(:yard)
+desc "Sanitize VCR fixtures (remove Apikey values)"
+task :vcr_sanitize do
+  system(%{ruby -pi.bak -e "gsub(/- ApiKey .+:.+/, '- ApiKey testuser:key')" spec/fixtures/cassettes/*.yml})
+end
