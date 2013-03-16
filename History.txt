@@ -1,3 +1,14 @@
+=== 0.2.0 / 2013-03-16
+
+* Implemented CRUD methods
+* Implemented #fetch_version
+* Switched to VCR test library
+
+=== 0.1.0 / 2013-02-23
+
+* Switched to Faraday
+* Reorganized code
+
 === 0.0.4 / 2013-01-05
 
 * Fixed gem homepage
