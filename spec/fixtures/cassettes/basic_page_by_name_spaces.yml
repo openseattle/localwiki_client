@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/TestPage533b1957-d395-4edf-81a6-f38a60f1459c?format=json
+    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/Test_Page0c230d1d-7442-42f2-bbc9-e2768c5a562e?format=json
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 16 Mar 2013 01:07:50 GMT
+      - Sat, 16 Mar 2013 01:07:52 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
@@ -32,9 +32,10 @@ http_interactions:
       - application/vnd.api.v1+json; charset=utf-8
     body:
       encoding: US-ASCII
-      string: ! '{"content": "<p>Created!</p>", "id": 254, "map": null, "name": "TestPage533b1957-d395-4edf-81a6-f38a60f1459c",
-        "page_tags": null, "resource_uri": "/api/page/TestPage533b1957-d395-4edf-81a6-f38a60f1459c",
-        "slug": "testpage533b1957-d395-4edf-81a6-f38a60f1459c"}'
+      string: ! '{"content": "<p>Created page with spaces!</p>", "id": 255, "map":
+        null, "name": "Test Page0c230d1d-7442-42f2-bbc9-e2768c5a562e", "page_tags":
+        null, "resource_uri": "/api/page/Test_Page0c230d1d-7442-42f2-bbc9-e2768c5a562e",
+        "slug": "test page0c230d1d-7442-42f2-bbc9-e2768c5a562e"}'
     http_version: 
-  recorded_at: Sat, 16 Mar 2013 01:07:19 GMT
+  recorded_at: Sat, 16 Mar 2013 01:07:21 GMT
 recorded_with: VCR 2.4.0

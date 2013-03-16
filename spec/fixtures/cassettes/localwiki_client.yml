@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Feb 2013 00:46:38 GMT
+      - Sat, 16 Mar 2013 01:07:52 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
@@ -31,7 +31,7 @@ http_interactions:
       Content-Type:
       - application/vnd.api.v1+json; charset=utf-8
     body:
-      encoding: UTF-8
+      encoding: US-ASCII
       string: ! '{"domain": "example.com", "id": 1, "language_code": "en-us", "license":
         "<p>Except where otherwise noted, this content is licensed under a <a rel=\"license\"
         href=\"http://creativecommons.org/licenses/by/3.0/\">Creative Commons Attribution
@@ -42,7 +42,7 @@ http_interactions:
         See <a href=\"/Copyrights\" target=\"_blank\">Copyrights</a>.", "time_zone":
         "America/Chicago"}'
     http_version: 
-  recorded_at: Thu, 28 Feb 2013 00:46:26 GMT
+  recorded_at: Sat, 16 Mar 2013 01:07:21 GMT
 - request:
     method: get
     uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/site?format=json&limit=1
@@ -50,19 +50,19 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      User-Agent:
-      - Faraday v0.8.6
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - ! '*/*'
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Wed, 06 Mar 2013 06:42:04 GMT
+      - Sat, 16 Mar 2013 01:07:52 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
@@ -86,7 +86,7 @@ http_interactions:
         See <a href=\"/Copyrights\" target=\"_blank\">Copyrights</a>.", "time_zone":
         "America/Chicago"}]}'
     http_version: 
-  recorded_at: Wed, 06 Mar 2013 06:41:43 GMT
+  recorded_at: Sat, 16 Mar 2013 01:07:21 GMT
 - request:
     method: get
     uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page?format=json&limit=1
@@ -94,19 +94,19 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      User-Agent:
-      - Faraday v0.8.6
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - ! '*/*'
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Wed, 06 Mar 2013 06:42:05 GMT
+      - Sat, 16 Mar 2013 01:07:52 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
@@ -122,7 +122,7 @@ http_interactions:
       string: !binary |-
         eyJtZXRhIjogeyJsaW1pdCI6IDEsICJuZXh0IjogIi9hcGkvcGFnZT9vZmZz
         ZXQ9MSZsaW1pdD0xJmxpbWl0PTEmZm9ybWF0PWpzb24iLCAib2Zmc2V0Ijog
-        MCwgInByZXZpb3VzIjogbnVsbCwgInRvdGFsX2NvdW50IjogNDB9LCAib2Jq
+        MCwgInByZXZpb3VzIjogbnVsbCwgInRvdGFsX2NvdW50IjogNTh9LCAib2Jq
         ZWN0cyI6IFt7ImNvbnRlbnQiOiAiPHRhYmxlPlxuXHQ8dGJvZHk+XG5cdFx0
         PHRyPlxuXHRcdFx0PHRkIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogcmdi
         KDIzMiwgMjM2LCAyMzkpO1wiPlxuXHRcdFx0XHQ8c3Ryb25nPkxvY2F0aW9u
@@ -178,7 +178,7 @@ http_interactions:
         Y2VfdXJpIjogIi9hcGkvcGFnZS9UZW1wbGF0ZXMvQnVzaW5lc3MiLCAic2x1
         ZyI6ICJ0ZW1wbGF0ZXMvYnVzaW5lc3MifV19
     http_version: 
-  recorded_at: Wed, 06 Mar 2013 06:41:44 GMT
+  recorded_at: Sat, 16 Mar 2013 01:07:22 GMT
 - request:
     method: get
     uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/user?format=json&limit=1
@@ -186,19 +186,19 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      User-Agent:
-      - Faraday v0.8.6
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - ! '*/*'
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Wed, 06 Mar 2013 06:42:06 GMT
+      - Sat, 16 Mar 2013 01:07:53 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
@@ -216,7 +216,7 @@ http_interactions:
         "2013-02-17T01:54:39.818130", "first_name": "", "last_name": "", "resource_uri":
         "", "username": "AnonymousUser"}]}'
     http_version: 
-  recorded_at: Wed, 06 Mar 2013 06:41:44 GMT
+  recorded_at: Sat, 16 Mar 2013 01:07:22 GMT
 - request:
     method: get
     uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/file?format=json&limit=1
@@ -224,19 +224,19 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      User-Agent:
-      - Faraday v0.8.6
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - ! '*/*'
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Wed, 06 Mar 2013 06:42:06 GMT
+      - Sat, 16 Mar 2013 01:07:53 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
@@ -252,7 +252,7 @@ http_interactions:
       string: ! '{"meta": {"limit": 1, "next": null, "offset": 0, "previous": null,
         "total_count": 0}, "objects": []}'
     http_version: 
-  recorded_at: Wed, 06 Mar 2013 06:41:44 GMT
+  recorded_at: Sat, 16 Mar 2013 01:07:22 GMT
 - request:
     method: get
     uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/map?format=json&limit=1
@@ -260,19 +260,19 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      User-Agent:
-      - Faraday v0.8.6
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - ! '*/*'
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Wed, 06 Mar 2013 06:42:06 GMT
+      - Sat, 16 Mar 2013 01:07:53 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
@@ -288,7 +288,7 @@ http_interactions:
       string: ! '{"meta": {"limit": 1, "next": null, "offset": 0, "previous": null,
         "total_count": 0}, "objects": []}'
     http_version: 
-  recorded_at: Wed, 06 Mar 2013 06:41:45 GMT
+  recorded_at: Sat, 16 Mar 2013 01:07:22 GMT
 - request:
     method: get
     uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/tag?format=json&limit=1
@@ -296,19 +296,19 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      User-Agent:
-      - Faraday v0.8.6
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - ! '*/*'
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Wed, 06 Mar 2013 06:42:07 GMT
+      - Sat, 16 Mar 2013 01:07:53 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
@@ -322,10 +322,10 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! '{"meta": {"limit": 1, "next": "/api/tag?offset=1&limit=1&limit=1&format=json",
-        "offset": 0, "previous": null, "total_count": 3}, "objects": [{"id": 3, "name":
-        "h_test", "resource_uri": "/api/tag/h_test", "slug": "h_test"}]}'
+        "offset": 0, "previous": null, "total_count": 5}, "objects": [{"id": 5, "name":
+        "cats_test", "resource_uri": "/api/tag/cats_test", "slug": "cats_test"}]}'
     http_version: 
-  recorded_at: Wed, 06 Mar 2013 06:41:45 GMT
+  recorded_at: Sat, 16 Mar 2013 01:07:22 GMT
 - request:
     method: get
     uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page_tags?format=json&limit=1
@@ -333,19 +333,19 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      User-Agent:
-      - Faraday v0.8.6
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - ! '*/*'
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Wed, 06 Mar 2013 06:42:07 GMT
+      - Sat, 16 Mar 2013 01:07:53 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
@@ -359,9 +359,8 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! '{"meta": {"limit": 1, "next": "/api/page_tags?offset=1&limit=1&limit=1&format=json",
-        "offset": 0, "previous": null, "total_count": 2}, "objects": [{"id": 3, "page":
-        "/api/page/HTestPage62148626-5794-40de-90aa-b223374fb095", "resource_uri":
-        "/api/page_tags/HTestPage62148626-5794-40de-90aa-b223374fb095", "tags": ["/api/tag/h_test"]}]}'
+        "offset": 0, "previous": null, "total_count": 2}, "objects": [{"id": 5, "page":
+        "/api/page/cats", "resource_uri": "/api/page_tags/cats", "tags": []}]}'
     http_version: 
-  recorded_at: Wed, 06 Mar 2013 06:41:45 GMT
+  recorded_at: Sat, 16 Mar 2013 01:07:23 GMT
 recorded_with: VCR 2.4.0

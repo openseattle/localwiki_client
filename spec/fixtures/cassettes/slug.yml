@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 16 Mar 2013 01:07:50 GMT
+      - Sat, 16 Mar 2013 01:07:54 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
@@ -42,49 +42,5 @@ http_interactions:
         See <a href=\"/Copyrights\" target=\"_blank\">Copyrights</a>.", "time_zone":
         "America/Chicago"}'
     http_version: 
-  recorded_at: Sat, 16 Mar 2013 01:07:19 GMT
-- request:
-    method: post
-    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/
-    body:
-      encoding: UTF-8
-      string: ! '{"name":"TestPage533b1957-d395-4edf-81a6-f38a60f1459c","content":"<p>Created!</p>"}'
-    headers:
-      Content-Type:
-      - application/json
-      Authorization:
-      - ApiKey testuser:key
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 201
-      message: CREATED
-    headers:
-      Date:
-      - Sat, 16 Mar 2013 01:07:50 GMT
-      Server:
-      - Apache/2.2.22 (Ubuntu)
-      Vary:
-      - Cookie,Accept-Encoding
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Access-Control-Allow-Methods:
-      - POST,GET,OPTIONS,PUT,DELETE
-      Set-Cookie:
-      - sessionid=e6ca591c90fc5bb8964c53dd2e6436eb; expires=Sat, 30-Mar-2013 01:07:50
-        GMT; Max-Age=1209600; Path=/
-      Location:
-      - http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/TestPage533b1957-d395-4edf-81a6-f38a60f1459c
-      Content-Length:
-      - '0'
-      Content-Type:
-      - text/html; charset=utf-8
-    body:
-      encoding: US-ASCII
-      string: ''
-    http_version: 
-  recorded_at: Sat, 16 Mar 2013 01:07:19 GMT
+  recorded_at: Sat, 16 Mar 2013 01:07:23 GMT
 recorded_with: VCR 2.4.0

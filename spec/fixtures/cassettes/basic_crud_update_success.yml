@@ -2,19 +2,17 @@
 http_interactions:
 - request:
     method: put
-    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/TestPage30bb031f-e69e-4fa0-a544-0af4850e4221
+    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/TestPage533b1957-d395-4edf-81a6-f38a60f1459c
     body:
       encoding: UTF-8
-      string: '{"content":"<foo>"}'
+      string: ! '{"content":"<foo>"}'
     headers:
       Content-Type:
       - application/json
       Authorization:
-      - ApiKey testuser:foo
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      - ApiKey testuser:key
       Accept:
-      - '*/*'
+      - ! '*/*'
       User-Agent:
       - Ruby
   response:
@@ -23,11 +21,11 @@ http_interactions:
       message: NO CONTENT
     headers:
       Date:
-      - Thu, 28 Feb 2013 00:47:04 GMT
+      - Sat, 16 Mar 2013 01:07:50 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
-      - '*'
+      - ! '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
       Content-Length:
@@ -37,8 +35,8 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
     body:
-      encoding: UTF-8
+      encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Thu, 28 Feb 2013 00:46:52 GMT
+  recorded_at: Sat, 16 Mar 2013 01:07:20 GMT
 recorded_with: VCR 2.4.0
