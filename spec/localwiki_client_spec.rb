@@ -1,11 +1,5 @@
 require File.expand_path("../helper", __FILE__)
 
-VCR.configure do |c|
-  c.cassette_library_dir = File.expand_path("fixtures/cassettes", File.dirname(__FILE__))
-  c.hook_into :webmock
-  # c.debug_logger = File.open('spec/fixtures/cassettes/debug_vcr.log', 'w')
-end
-
 describe 'LocalwikiClient' do
 
   before(:all) do
@@ -35,14 +29,10 @@ describe 'LocalwikiClient' do
       it 'returns page body'
     end
 
-    context '#count(resource)' do
-      it { @wiki.count('site').should be_a Fixnum }
-      it { @wiki.count('page').should be_a Fixnum }
-      it { @wiki.count('user').should be_a Fixnum }
-      it { @wiki.count('file').should be_a Fixnum }
-      it { @wiki.count('map').should be_a Fixnum }
-      it { @wiki.count('tag').should be_a Fixnum }
-      it { @wiki.count('page_tags').should be_a Fixnum }
+    %W{site page user file map tag page_tags}.each do |resource|
+      context "#count(#{resource})" do
+        it { @wiki.count(resource).should be_a Fixnum }
+      end
     end
 
     context '#list' do
