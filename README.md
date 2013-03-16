@@ -43,6 +43,7 @@ Contributors
 Seth Vincent
 Brandon Faloona
 Helen Canzler
+Jerry Frost
 
 LICENSE
 -------

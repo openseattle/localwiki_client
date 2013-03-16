@@ -67,7 +67,7 @@ module Localwiki
     # @param params is a hash of query string params
     # @example wiki.update('page', '<page tag>')
     def fetch(resource,identifier,params={})
-      uri = '/api/' + resource.to_s + '/' + identifier
+      uri = '/api/' + resource.to_s + '/' + slugify(identifier)
       http_get(uri,params)
     end
     alias_method :read, :fetch
@@ -89,7 +89,7 @@ module Localwiki
     # @param json is a json object
     # @example wiki.update('page', '<page tag>', <json object>)
     def update(resource,identifier,json)
-      uri = '/api/' + resource.to_s + '/' + identifier
+      uri = '/api/' + resource.to_s + '/' + slugify(identifier)
       http_put(uri, json)  
     end
 
@@ -99,7 +99,7 @@ module Localwiki
     # @param identifier is id, pagename, slug, etc.
     # @example wiki.delete('page', '<page tag>')
     def delete(resource,identifier)
-      uri = '/api/' + resource.to_s + '/' + identifier
+      uri = '/api/' + resource.to_s + '/' + slugify(identifier)
       http_delete(uri)
     end
 
@@ -175,5 +175,12 @@ module Localwiki
         req.headers['Authorization'] = "ApiKey #{@user}:#{@apikey}"
       end
     end
+
+    ##
+    # create human readable identifier that is used to create clean urls
+    def slugify(string)
+      string.to_s.strip.gsub(' ', "_")
+    end
+
   end
 end
