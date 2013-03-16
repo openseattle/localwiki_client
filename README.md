@@ -44,6 +44,7 @@ Seth Vincent
 Brandon Faloona
 Helen Canzler
 Jerry Frost
+Matt Adkins
 
 LICENSE
 -------

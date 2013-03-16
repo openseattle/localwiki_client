@@ -1,0 +1,130 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/
+    body:
+      encoding: UTF-8
+      string: ! '{"name":"TestPagec741d8ca-a27c-44b4-a77e-9539688a2695","content":"<p>Created!</p>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - ApiKey testuser:key
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Sat, 16 Mar 2013 05:14:51 GMT
+      Server:
+      - Apache/2.2.22 (Ubuntu)
+      Vary:
+      - Cookie,Accept-Encoding
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Allow-Methods:
+      - POST,GET,OPTIONS,PUT,DELETE
+      Set-Cookie:
+      - sessionid=78e682d36fda5707c22f0c1cf3acf820; expires=Sat, 30-Mar-2013 05:14:51
+        GMT; Max-Age=1209600; Path=/
+      Location:
+      - http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/TestPagec741d8ca-a27c-44b4-a77e-9539688a2695
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Sat, 16 Mar 2013 05:14:20 GMT
+- request:
+    method: put
+    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/TestPagec741d8ca-a27c-44b4-a77e-9539688a2695
+    body:
+      encoding: UTF-8
+      string: ! '{"content":"<p>foo</p>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - ApiKey testuser:key
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 204
+      message: NO CONTENT
+    headers:
+      Date:
+      - Sat, 16 Mar 2013 05:14:51 GMT
+      Server:
+      - Apache/2.2.22 (Ubuntu)
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Allow-Methods:
+      - POST,GET,OPTIONS,PUT,DELETE
+      Content-Length:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - text/html; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Sat, 16 Mar 2013 05:14:20 GMT
+- request:
+    method: get
+    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page_version?format=json&name=TestPagec741d8ca-a27c-44b4-a77e-9539688a2695
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 16 Mar 2013 05:14:51 GMT
+      Server:
+      - Apache/2.2.22 (Ubuntu)
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Allow-Methods:
+      - POST,GET,OPTIONS,PUT,DELETE
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/vnd.api.v1+json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"meta": {"limit": 20, "next": null, "offset": 0, "previous": null,
+        "total_count": 2}, "objects": [{"content": "<p>foo</p>", "history_comment":
+        null, "history_date": "2013-03-16T00:14:51.669749", "history_id": 718, "history_type":
+        1, "history_user": "/api/user/2", "history_user_ip": "70.89.154.169", "id":
+        285, "name": "TestPagec741d8ca-a27c-44b4-a77e-9539688a2695", "resource_uri":
+        "/api/page_version/718", "slug": "testpagec741d8ca-a27c-44b4-a77e-9539688a2695"},
+        {"content": "<p>Created!</p>", "history_comment": null, "history_date": "2013-03-16T00:14:51.249885",
+        "history_id": 717, "history_type": 0, "history_user": "/api/user/2", "history_user_ip":
+        "70.89.154.169", "id": 285, "name": "TestPagec741d8ca-a27c-44b4-a77e-9539688a2695",
+        "resource_uri": "/api/page_version/717", "slug": "testpagec741d8ca-a27c-44b4-a77e-9539688a2695"}]}'
+    http_version: 
+  recorded_at: Sat, 16 Mar 2013 05:14:21 GMT
+recorded_with: VCR 2.4.0

@@ -76,6 +76,30 @@ module Localwiki
     alias_method :read, :fetch
 
     ##
+    # fetch version information for a resource
+    # @param resource are "site", "page", "user", "file", "map", "tag", "page_tag"
+    # @param identifier is id, pagename, slug, etc.
+    # @param params is a hash of query string params
+    # @example wiki.fetch_version('page', 'First Page')
+    # @return [Hash] the parsed JSON object from the response body, otherwise the whole http response object
+    def fetch_version(resource,identifier,params={})
+      uri = '/api/' + resource.to_s + '_version?name=' + identifier
+      http_get(uri,params)
+    end
+
+    ##
+    # number of unique authors that have modified a resource
+    # @param resource are "site", "page", "user", "file", "map", "tag", "page_tag"
+    # @param identifier is id, pagename, slug, etc.
+    # @param params is a hash of query string params
+    # @example wiki.unique_authors('page', 'First Page')
+    # @return [Fixnum]
+    def unique_authors(resource,identifier,params={})
+      json = fetch_version(resource,identifier,params)
+      json['objects'].map {|entry| entry['history_user']}.uniq.length
+    end
+
+    ##
     # create a specific resource
     # @param resource are "site", "page", "user", "file", "map", "tag", "page_tag"
     # @param json is a json object
@@ -113,7 +137,6 @@ module Localwiki
 
     ##
     # Get site resource and set instance variables
-    #
     def collect_site_details
       site = fetch('site','1')
       @site_name = site['name']
@@ -123,7 +146,6 @@ module Localwiki
 
     ##
     # create Faraday::Connection instance and set @site
-    #
     def create_connection
       @site = Faraday.new :url => @hostname
     end
@@ -188,6 +210,9 @@ module Localwiki
 
     ##
     # create human readable identifier that is used to create clean urls
+    # @param string
+    # @example slugify('My Page') == 'My_Page'
+    # @return [String]
     def slugify(string)
       string.to_s.strip.gsub(' ', "_")
     end
