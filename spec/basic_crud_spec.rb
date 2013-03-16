@@ -28,7 +28,7 @@ describe 'LocalwikiClient' do
     it "#read('page', pagename) response.status should match(/Created!/)" do
       VCR.use_cassette 'basic_crud_read_success', :match_requests_on => [:method, @path_matcher] do
         response = @wiki.read('page', @pagename)
-        response["content"].should match(/Created!/)
+        response["content"].should match (/Created!/)
       end
     end
 
@@ -36,6 +36,7 @@ describe 'LocalwikiClient' do
       VCR.use_cassette 'basic_crud_update_success', :match_requests_on => [:method, @path_matcher] do
         response = @wiki.update('page', @pagename, {content: '<foo>'}.to_json)
         response.status.should eq 204
+
       end
     end
 
@@ -44,6 +45,14 @@ describe 'LocalwikiClient' do
         response = @wiki.delete('page', @pagename)
         response.status.should eq 204
       end
+	  
+	it "#version('page', pagename) response.status is 204" do
+      VCR.use_cassette 'basic_crud_version_success', :match_requests_on => [:method, @path_matcher] do
+        response = @wiki.update('page', @pagename, {content: '<foo>'}.to_json)
+        num_objects
+        response.status.should_not eq 0
+      end
+
     end
 
     context "when page does not exist" do
@@ -64,4 +73,14 @@ describe 'LocalwikiClient' do
 
     end
   end
-end
+  end
+  end
+  
+  #
+#      num = num_edits (json)
+#      create uuid
+#      edit
+#edit
+#num_page_edits (page)
+#
+#

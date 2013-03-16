@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/site/1?format=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.6
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 02 Mar 2013 21:27:44 GMT
+      Server:
+      - Apache/2.2.22 (Ubuntu)
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Allow-Methods:
+      - POST,GET,OPTIONS,PUT,DELETE
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/vnd.api.v1+json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"domain": "example.com", "id": 1, "language_code": "en-us", "license":
+        "<p>Except where otherwise noted, this content is licensed under a <a rel=\"license\"
+        href=\"http://creativecommons.org/licenses/by/3.0/\">Creative Commons Attribution
+        License</a>. See <a href=\"/Copyrights\">Copyrights.</p>", "name": "example.com",
+        "resource_uri": "/api/site/1", "signup_tos": "I agree to release my contributions
+        under the <a rel=\"license\" href=\"http://creativecommons.org/licenses/by/3.0/\"
+        target=\"_blank\">Creative Commons-By license</a>, unless noted otherwise.
+        See <a href=\"/Copyrights\" target=\"_blank\">Copyrights</a>.", "time_zone":
+        "America/Chicago"}'
+    http_version: 
+  recorded_at: Sat, 02 Mar 2013 21:27:33 GMT
+recorded_with: VCR 2.4.0
