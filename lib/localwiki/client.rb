@@ -45,6 +45,7 @@ module Localwiki
     ##
     # fetch a page by name ("The Page Name" or "The_Page_Name" or "the page name")
     # @param name "The Page Name" or "The_Page_Name" or "the page name"
+    # @return [Hash] the parsed JSON object from the response body, otherwise the whole http response object
     def page_by_name(name)
       fetch(:page,"#{name.gsub!(/\s/, '_')}")
     end
@@ -54,6 +55,7 @@ module Localwiki
     # @param resource are "site", "page", "user", "file", "map", "tag", "page_tag"
     # @param limit is an integer
     # @param params is a hash of query string params
+    # @return [Hash] the parsed JSON object from the response body, otherwise the whole http response object
     def list(resource,limit=0,params={})
       uri = '/api/' + resource.to_s
       params.merge!({limit: limit.to_s})
@@ -66,6 +68,7 @@ module Localwiki
     # @param identifier is id, pagename, slug, etc.
     # @param params is a hash of query string params
     # @example wiki.update('page', '<page tag>')
+    # @return [Hash] the parsed JSON object from the response body, otherwise the whole http response object
     def fetch(resource,identifier,params={})
       uri = '/api/' + resource.to_s + '/' + slugify(identifier)
       http_get(uri,params)
@@ -77,6 +80,7 @@ module Localwiki
     # @param resource are "site", "page", "user", "file", "map", "tag", "page_tag"
     # @param json is a json object
     # @example wiki.create('page', <json object containing the page tag>)
+    # @return [HTTPResponse] the http response object
     def create(resource, json)
       uri = '/api/' + resource.to_s + '/'
       http_post(uri, json)
@@ -88,6 +92,7 @@ module Localwiki
     # @param identifier is id, pagename, slug, etc.
     # @param json is a json object
     # @example wiki.update('page', '<page tag>', <json object>)
+    # @return [HTTPResponse] the http response object
     def update(resource,identifier,json)
       uri = '/api/' + resource.to_s + '/' + slugify(identifier)
       http_put(uri, json)  
@@ -98,6 +103,7 @@ module Localwiki
     # @param resource are "site", "page", "user", "file", "map", "tag", "page_tag"
     # @param identifier is id, pagename, slug, etc.
     # @example wiki.delete('page', '<page tag>')
+    # @return [HTTPResponse] the http response object
     def delete(resource,identifier)
       uri = '/api/' + resource.to_s + '/' + slugify(identifier)
       http_delete(uri)
@@ -126,6 +132,7 @@ module Localwiki
     # http get request
     # @param uri /api/<resource>/<resource identifier>
     # @param params is a hash of query string params
+    # @return [Hash] the parsed JSON object, otherwise the  http response object
     def http_get(uri,params={})
       params.merge!({format: 'json'})
       full_url = 'http://' + @hostname + uri.to_s
@@ -137,6 +144,7 @@ module Localwiki
     # http post request
     # @param uri /api/<resource>/
     # @param json is a json object
+    # @return [HTTPResponse] the http response object
     def http_post(uri, json)
       full_url = 'http://' + @hostname + uri.to_s
       
@@ -152,6 +160,7 @@ module Localwiki
     # http put request
     # @param uri /api/<resource>/<resource identifier>
     # @param json is a json object
+    # @return [HTTPResponse] the http response object
     def http_put(uri, json)
       full_url = 'http://' + @hostname + uri.to_s
       
@@ -166,6 +175,7 @@ module Localwiki
     ##
     # http delete request
     # @param uri /api/<resource>/<resource identifier>
+    # @return [HTTPResponse] the http response object
     def http_delete(uri)
       full_url = 'http://' + @hostname + uri.to_s
 
