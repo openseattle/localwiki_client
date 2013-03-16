@@ -47,5 +47,5 @@ end
 
 desc "Sanitize VCR fixtures (remove Apikey values)"
 task :vcr_sanitize do
-  system(%{ruby -pi.bak -e "gsub(/- ApiKey .+:.+/, '- ApiKey testuser:key')" spec/fixtures/cassettes/*.yml})
+  system(%{ruby -pi -e "gsub(/- ApiKey .+:.+/, '- ApiKey testuser:key')" spec/fixtures/cassettes/*.yml})
 end
