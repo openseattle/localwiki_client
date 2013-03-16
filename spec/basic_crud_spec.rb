@@ -46,5 +46,22 @@ describe 'LocalwikiClient' do
       end
     end
 
+    context "when page does not exist" do
+
+      it "#read returns response.status of 404" do
+        VCR.use_cassette 'basic_crud_read_fail', :match_requests_on => [:method, @path_matcher] do
+          response = @wiki.read('page', @pagename)
+          response.status.should eq 404
+        end
+      end
+
+      it "#delete returns response.status of 404" do
+        VCR.use_cassette 'basic_crud_delete_fail', :match_requests_on => [:method, @path_matcher] do
+          response = @wiki.delete('page', @pagename)
+          response.status.should eq 404
+        end
+      end
+
+    end
   end
 end
