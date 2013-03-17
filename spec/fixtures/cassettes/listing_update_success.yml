@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/TestPageForListing27772e2e-9c03-49d1-9357-ee78c9e2d870
+    body:
+      encoding: UTF-8
+      string: ! '{"content":"<foo>"}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.6
+      Content-Type:
+      - application/json
+      Authorization:
+      - ApiKey jsfrost:ce773e60a1b8dc56cf0590e8873b4a134a560944
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 204
+      message: NO CONTENT
+    headers:
+      Date:
+      - Sun, 17 Mar 2013 01:14:08 GMT
+      Server:
+      - Apache/2.2.22 (Ubuntu)
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Allow-Methods:
+      - POST,GET,OPTIONS,PUT,DELETE
+      Content-Length:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - text/html; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Sun, 17 Mar 2013 01:13:42 GMT
+recorded_with: VCR 2.4.0
