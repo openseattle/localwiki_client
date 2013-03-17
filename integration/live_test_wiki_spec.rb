@@ -35,6 +35,11 @@ if test_env_vars_set?
         @wiki.read('page', @pagename)["content"].should match(/Updated!/)
       end
 
+      it "#list('page') response.to_s should include a new TestPage" do
+        response = @wiki.list('page')
+        response.to_s.should include "#{@pagename}"
+      end
+
       it "#delete('page', 'TestPage<uuid>') response.status is 204" do
         response = @wiki.delete('page', @pagename)
         response.status.should eq 204
