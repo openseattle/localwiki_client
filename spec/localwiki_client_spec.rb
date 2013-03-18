@@ -25,10 +25,6 @@ describe 'LocalwikiClient' do
       it { @wiki.language_code.should eq 'en-us' }
     end
 
-    context '#page_by_name' do
-      it 'returns page body'
-    end
-
     %W{site page user file map tag page_tags}.each do |resource|
       context "#count(#{resource})" do
         it { @wiki.count(resource).should be_a Fixnum }

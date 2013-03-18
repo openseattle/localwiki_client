@@ -10,7 +10,7 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
+      - '*/*'
       User-Agent:
       - Ruby
   response:
@@ -19,20 +19,20 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 16 Mar 2013 01:07:50 GMT
+      - Mon, 18 Mar 2013 15:57:09 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
+      Content-Type:
+      - application/vnd.api.v1+json;charset=utf-8
       Transfer-Encoding:
       - chunked
-      Content-Type:
-      - application/vnd.api.v1+json; charset=utf-8
     body:
-      encoding: US-ASCII
-      string: ! '{"domain": "example.com", "id": 1, "language_code": "en-us", "license":
+      encoding: UTF-8
+      string: '{"domain": "example.com", "id": 1, "language_code": "en-us", "license":
         "<p>Except where otherwise noted, this content is licensed under a <a rel=\"license\"
         href=\"http://creativecommons.org/licenses/by/3.0/\">Creative Commons Attribution
         License</a>. See <a href=\"/Copyrights\">Copyrights.</p>", "name": "example.com",
@@ -42,20 +42,22 @@ http_interactions:
         See <a href=\"/Copyrights\" target=\"_blank\">Copyrights</a>.", "time_zone":
         "America/Chicago"}'
     http_version: 
-  recorded_at: Sat, 16 Mar 2013 01:07:19 GMT
+  recorded_at: Mon, 18 Mar 2013 15:56:36 GMT
 - request:
     method: post
     uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/
     body:
       encoding: UTF-8
-      string: ! '{"name":"TestPage533b1957-d395-4edf-81a6-f38a60f1459c","content":"<p>Created!</p>"}'
+      string: '{"name":"TestPage15281b20-6503-4cbc-9974-4b92f74b9e3e","content":"<p>Created!</p>"}'
     headers:
       Content-Type:
       - application/json
       Authorization:
       - ApiKey testuser:key
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
+      - '*/*'
       User-Agent:
       - Ruby
   response:
@@ -64,27 +66,27 @@ http_interactions:
       message: CREATED
     headers:
       Date:
-      - Sat, 16 Mar 2013 01:07:50 GMT
+      - Mon, 18 Mar 2013 15:57:10 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Vary:
       - Cookie,Accept-Encoding
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
       Set-Cookie:
-      - sessionid=e6ca591c90fc5bb8964c53dd2e6436eb; expires=Sat, 30-Mar-2013 01:07:50
+      - sessionid=980bd255b68046a856b0f90a5441c1f5; expires=Mon, 01-Apr-2013 15:57:10
         GMT; Max-Age=1209600; Path=/
       Location:
-      - http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/TestPage533b1957-d395-4edf-81a6-f38a60f1459c
-      Content-Length:
-      - '0'
+      - http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/TestPage15281b20-6503-4cbc-9974-4b92f74b9e3e
       Content-Type:
-      - text/html; charset=utf-8
+      - text/html;charset=utf-8
+      Content-Length:
+      - '20'
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Sat, 16 Mar 2013 01:07:19 GMT
+  recorded_at: Mon, 18 Mar 2013 15:56:36 GMT
 recorded_with: VCR 2.4.0

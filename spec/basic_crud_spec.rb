@@ -25,9 +25,16 @@ describe 'LocalwikiClient' do
       @create_response.status.should eq 201
     end
 
-    it "#read('page', pagename) response.status should match(/Created!/)" do
+    it "#read('page', pagename) returns page json object)" do
       VCR.use_cassette 'basic_crud_read_success', :match_requests_on => [:method, @path_matcher] do
         response = @wiki.read('page', @pagename)
+        response["content"].should match(/Created!/)
+      end
+    end
+
+    it "#page_by_name(pagename) returns page json object" do
+      VCR.use_cassette 'basic_crud_page_by_name_success', :match_requests_on => [:method, @path_matcher] do
+        response = @wiki.page_by_name(@pagename)
         response["content"].should match(/Created!/)
       end
     end
