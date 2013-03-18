@@ -47,7 +47,7 @@ module Localwiki
     # @param name "The Page Name" or "The_Page_Name" or "the page name"
     # @return [Hash] the parsed JSON object from the response body, otherwise the whole http response object
     def page_by_name(name)
-      fetch(:page,"#{name.gsub!(/\s/, '_')}")
+      fetch(:page, name)
     end
 
     ##
