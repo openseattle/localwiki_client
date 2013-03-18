@@ -15,12 +15,12 @@ if test_env_vars_set?
       before(:all) do
         require 'securerandom'
         @pagename = "TestPage#{SecureRandom.uuid}"
+        json = {name: @pagename, content: '<p>Created!</p>'}.to_json
+        @create_response = @wiki.create('page', json)
       end
 
       it "#create('page', json) response.status is 201" do
-        json = {name: @pagename, content: '<p>Created!</p>'}.to_json
-        response = @wiki.create('page', json)
-        response.status.should eq 201
+        @create_response.status.should eq 201
       end
 
       it "#read('page', 'TestPage<uuid>') response.status is 200" do
@@ -39,6 +39,22 @@ if test_env_vars_set?
         response = @wiki.delete('page', @pagename)
         response.status.should eq 204
         @wiki.read('page', @pagename).status.should eq 404
+      end
+
+    end
+
+    context "#list" do
+
+      before(:all) do
+        @response = @wiki.list('page', 2)
+      end
+
+      it "returns collection of resources objects" do
+        @response['objects'].first.keys.length.should be > 1
+      end
+
+      it "limit parameter limits number of resources returned" do
+        @response['objects'].length.should eq 2
       end
 
     end

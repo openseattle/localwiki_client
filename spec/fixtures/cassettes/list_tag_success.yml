@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/tag?format=json&limit=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 18 Mar 2013 15:52:36 GMT
+      Server:
+      - Apache/2.2.22 (Ubuntu)
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Allow-Methods:
+      - POST,GET,OPTIONS,PUT,DELETE
+      Content-Type:
+      - application/vnd.api.v1+json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"meta": {"limit": 0, "offset": 0, "total_count": 5}, "objects": [{"id":
+        5, "name": "cats_test", "resource_uri": "/api/tag/cats_test", "slug": "cats_test"},
+        {"id": 3, "name": "h_test", "resource_uri": "/api/tag/h_test", "slug": "h_test"},
+        {"id": 1, "name": "huh", "resource_uri": "/api/tag/huh", "slug": "huh"}, {"id":
+        2, "name": "oh", "resource_uri": "/api/tag/oh", "slug": "oh"}, {"id": 4, "name":
+        "test_page_145", "resource_uri": "/api/tag/test_page_145", "slug": "test_page_145"}]}'
+    http_version: 
+  recorded_at: Mon, 18 Mar 2013 15:52:02 GMT
+recorded_with: VCR 2.4.0

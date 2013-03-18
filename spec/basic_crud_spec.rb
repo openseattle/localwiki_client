@@ -12,6 +12,7 @@ describe 'LocalwikiClient' do
     @path_matcher = lambda do |request_1, request_2|
       URI(request_1.uri).path.match(/TestPage/) && URI(request_2.uri).path.match(/TestPage/)
     end
+    @create_response = @wiki.create('page', {name: @pagename, content: '<p>Created!</p>'}.to_json)
   end
 
   after(:all) do
@@ -21,8 +22,7 @@ describe 'LocalwikiClient' do
   context "CRUD method" do
 
     it "#create('page', json) response.status is 201" do
-      response = @wiki.create('page', {name: @pagename, content: '<p>Created!</p>'}.to_json)
-      response.status.should eq 201
+      @create_response.status.should eq 201
     end
 
     it "#read('page', pagename) response.status should match(/Created!/)" do

@@ -35,9 +35,5 @@ describe 'LocalwikiClient' do
       end
     end
 
-    context '#list' do
-      it 'returns list of items matching'
-    end
-
   end
 end
