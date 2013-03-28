@@ -24,6 +24,12 @@ RSpec::Core::RakeTask.new(:integration) do |t|
   t.rspec_opts = ['-f d']
 end
 
+desc "Run code coverage"
+task :coverage do
+  ENV['COVERAGE'] = '1'
+  Rake::Task['spec'].invoke
+end
+
 desc "Flog the code! (*nix only)"
 task :flog do
   system('find lib -name \*.rb | xargs flog')

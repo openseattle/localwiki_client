@@ -1,3 +1,10 @@
+begin
+  require 'simplecov'
+  SimpleCov.start if ENV["COVERAGE"]
+rescue Exception => e
+  puts 'Run "gem install simplecov" to enable code coverage reporting'
+end
+
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
 require 'localwiki_client'
 require 'webmock/rspec'
