@@ -7,23 +7,23 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
+      - '*/*'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 16 Mar 2013 01:07:51 GMT
+      - Fri, 29 Mar 2013 02:07:16 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
       Transfer-Encoding:
@@ -31,8 +31,8 @@ http_interactions:
       Content-Type:
       - application/vnd.api.v1+json; charset=utf-8
     body:
-      encoding: US-ASCII
-      string: ! '{"domain": "example.com", "id": 1, "language_code": "en-us", "license":
+      encoding: UTF-8
+      string: '{"domain": "example.com", "id": 1, "language_code": "en-us", "license":
         "<p>Except where otherwise noted, this content is licensed under a <a rel=\"license\"
         href=\"http://creativecommons.org/licenses/by/3.0/\">Creative Commons Attribution
         License</a>. See <a href=\"/Copyrights\">Copyrights.</p>", "name": "example.com",
@@ -42,50 +42,52 @@ http_interactions:
         See <a href=\"/Copyrights\" target=\"_blank\">Copyrights</a>.", "time_zone":
         "America/Chicago"}'
     http_version: 
-  recorded_at: Sat, 16 Mar 2013 01:07:20 GMT
+  recorded_at: Fri, 29 Mar 2013 02:06:32 GMT
 - request:
     method: post
     uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/
     body:
       encoding: UTF-8
-      string: ! '{"name":"Test Page0c230d1d-7442-42f2-bbc9-e2768c5a562e","content":"<p>Created
+      string: '{"name":"Test Pagec2026982-a27d-414a-baff-8c23b703d958","content":"<p>Created
         page with spaces!</p>"}'
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Content-Type:
       - application/json
       Authorization:
       - ApiKey testuser:key
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
+      - '*/*'
   response:
     status:
       code: 201
       message: CREATED
     headers:
       Date:
-      - Sat, 16 Mar 2013 01:07:51 GMT
+      - Fri, 29 Mar 2013 02:07:16 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Vary:
       - Cookie,Accept-Encoding
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
       Set-Cookie:
-      - sessionid=c8e100346799ef6074dec276b229bac1; expires=Sat, 30-Mar-2013 01:07:52
+      - sessionid=27e0e18f9a79bb69dad291d0ac1fc3cb; expires=Fri, 12-Apr-2013 02:07:17
         GMT; Max-Age=1209600; Path=/
       Location:
-      - http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/Test_Page0c230d1d-7442-42f2-bbc9-e2768c5a562e
+      - http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/Test_Pagec2026982-a27d-414a-baff-8c23b703d958
       Content-Length:
-      - '0'
+      - '20'
       Content-Type:
       - text/html; charset=utf-8
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Sat, 16 Mar 2013 01:07:21 GMT
+  recorded_at: Fri, 29 Mar 2013 02:06:32 GMT
 recorded_with: VCR 2.4.0

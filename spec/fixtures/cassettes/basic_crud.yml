@@ -7,29 +7,29 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - '*/*'
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Mon, 18 Mar 2013 15:57:09 GMT
+      - Fri, 29 Mar 2013 02:07:14 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
       - '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
-      Content-Type:
-      - application/vnd.api.v1+json;charset=utf-8
       Transfer-Encoding:
       - chunked
+      Content-Type:
+      - application/vnd.api.v1+json; charset=utf-8
     body:
       encoding: UTF-8
       string: '{"domain": "example.com", "id": 1, "language_code": "en-us", "license":
@@ -42,14 +42,16 @@ http_interactions:
         See <a href=\"/Copyrights\" target=\"_blank\">Copyrights</a>.", "time_zone":
         "America/Chicago"}'
     http_version: 
-  recorded_at: Mon, 18 Mar 2013 15:56:36 GMT
+  recorded_at: Fri, 29 Mar 2013 02:06:29 GMT
 - request:
     method: post
     uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/
     body:
       encoding: UTF-8
-      string: '{"name":"TestPage15281b20-6503-4cbc-9974-4b92f74b9e3e","content":"<p>Created!</p>"}'
+      string: '{"name":"TestPage16de81aa-036e-410f-a2c8-c96bddcdf39a","content":"<p>Created!</p>"}'
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Content-Type:
       - application/json
       Authorization:
@@ -58,15 +60,13 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - '*/*'
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 201
       message: CREATED
     headers:
       Date:
-      - Mon, 18 Mar 2013 15:57:10 GMT
+      - Fri, 29 Mar 2013 02:07:14 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Vary:
@@ -76,17 +76,17 @@ http_interactions:
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
       Set-Cookie:
-      - sessionid=980bd255b68046a856b0f90a5441c1f5; expires=Mon, 01-Apr-2013 15:57:10
+      - sessionid=b7d912565459dbec5668a08d4a10f2f5; expires=Fri, 12-Apr-2013 02:07:14
         GMT; Max-Age=1209600; Path=/
       Location:
-      - http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/TestPage15281b20-6503-4cbc-9974-4b92f74b9e3e
-      Content-Type:
-      - text/html;charset=utf-8
+      - http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/TestPage16de81aa-036e-410f-a2c8-c96bddcdf39a
       Content-Length:
       - '20'
+      Content-Type:
+      - text/html; charset=utf-8
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Mon, 18 Mar 2013 15:56:36 GMT
+  recorded_at: Fri, 29 Mar 2013 02:06:30 GMT
 recorded_with: VCR 2.4.0

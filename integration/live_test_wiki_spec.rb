@@ -1,14 +1,14 @@
 require File.expand_path("../helper", __FILE__)
 
-if test_env_vars_set?
+describe 'LIVE testwiki instance' do
 
-  describe 'LIVE testwiki instance' do
+  before(:all) do
+    @wiki = Localwiki::Client.new 'ec2-54-234-151-52.compute-1.amazonaws.com',
+                                  ENV['localwiki_client_user'],
+                                  ENV['localwiki_client_apikey']
+  end
 
-    before(:all) {
-      @wiki = Localwiki::Client.new 'ec2-54-234-151-52.compute-1.amazonaws.com',
-                                    ENV['localwiki_client_user'],
-                                    ENV['localwiki_client_apikey']
-      }
+  if test_env_vars_set?
 
     context "CRUD methods" do
 
@@ -42,21 +42,20 @@ if test_env_vars_set?
       end
 
     end
+  end
 
-    context "#list" do
+  context "#list" do
 
-      before(:all) do
-        @response = @wiki.list('page', 2)
-      end
+    before(:all) do
+      @response = @wiki.list('page', 2)
+    end
 
-      it "returns collection of resources objects" do
-        @response['objects'].first.keys.length.should be > 1
-      end
+    it "returns collection of resources objects" do
+      @response['objects'].first.keys.length.should be > 1
+    end
 
-      it "limit parameter limits number of resources returned" do
-        @response['objects'].length.should eq 2
-      end
-
+    it "limit parameter limits number of resources returned" do
+      @response['objects'].length.should eq 2
     end
 
   end

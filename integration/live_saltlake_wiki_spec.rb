@@ -5,11 +5,11 @@ describe 'LIVE saltlakewiki.org' do
   subject { Localwiki::Client.new 'saltlakewiki.org' }
 
   context '#time_zone' do
-    it {subject.time_zone.should eq 'America/Chicago' }
+    it {subject.site.time_zone.should eq 'America/Chicago' }
   end
 
   context '#language_code' do
-    it {subject.language_code.should eq 'en-us'}
+    it {subject.site.language_code.should eq 'en-us'}
   end
 
   context '#total_resources("user")' do

@@ -24,8 +24,8 @@ describe 'LocalwikiClient' do
       end
       @wiki.create('page', {name: page_name, content: '<p>Created page with spaces!</p>'}.to_json)
       VCR.use_cassette 'basic_page_by_name_spaces', :match_requests_on => [:method, path_matcher] do
-        response = @wiki.page_by_name(page_name)
-        response["content"].should match(/Created page with spaces!/)
+        page = @wiki.page_by_name(page_name)
+        page.content.should match(/Created page with spaces!/)
       end
     end
 

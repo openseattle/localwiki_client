@@ -7,23 +7,23 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
+      - '*/*'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 16 Mar 2013 01:07:52 GMT
+      - Fri, 29 Mar 2013 02:07:23 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
       Transfer-Encoding:
@@ -31,8 +31,8 @@ http_interactions:
       Content-Type:
       - application/vnd.api.v1+json; charset=utf-8
     body:
-      encoding: US-ASCII
-      string: ! '{"domain": "example.com", "id": 1, "language_code": "en-us", "license":
+      encoding: UTF-8
+      string: '{"domain": "example.com", "id": 1, "language_code": "en-us", "license":
         "<p>Except where otherwise noted, this content is licensed under a <a rel=\"license\"
         href=\"http://creativecommons.org/licenses/by/3.0/\">Creative Commons Attribution
         License</a>. See <a href=\"/Copyrights\">Copyrights.</p>", "name": "example.com",
@@ -42,7 +42,7 @@ http_interactions:
         See <a href=\"/Copyrights\" target=\"_blank\">Copyrights</a>.", "time_zone":
         "America/Chicago"}'
     http_version: 
-  recorded_at: Sat, 16 Mar 2013 01:07:21 GMT
+  recorded_at: Fri, 29 Mar 2013 02:06:39 GMT
 - request:
     method: get
     uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/site?format=json&limit=1
@@ -50,23 +50,23 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
+      - '*/*'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 16 Mar 2013 01:07:52 GMT
+      - Fri, 29 Mar 2013 02:07:23 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
       Transfer-Encoding:
@@ -74,8 +74,8 @@ http_interactions:
       Content-Type:
       - application/vnd.api.v1+json; charset=utf-8
     body:
-      encoding: US-ASCII
-      string: ! '{"meta": {"limit": 1, "next": null, "offset": 0, "previous": null,
+      encoding: UTF-8
+      string: '{"meta": {"limit": 1, "next": null, "offset": 0, "previous": null,
         "total_count": 1}, "objects": [{"domain": "example.com", "id": 1, "language_code":
         "en-us", "license": "<p>Except where otherwise noted, this content is licensed
         under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by/3.0/\">Creative
@@ -86,7 +86,7 @@ http_interactions:
         See <a href=\"/Copyrights\" target=\"_blank\">Copyrights</a>.", "time_zone":
         "America/Chicago"}]}'
     http_version: 
-  recorded_at: Sat, 16 Mar 2013 01:07:21 GMT
+  recorded_at: Fri, 29 Mar 2013 02:06:39 GMT
 - request:
     method: get
     uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page?format=json&limit=1
@@ -94,23 +94,23 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
+      - '*/*'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 16 Mar 2013 01:07:52 GMT
+      - Fri, 29 Mar 2013 02:07:23 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
       Transfer-Encoding:
@@ -122,63 +122,63 @@ http_interactions:
       string: !binary |-
         eyJtZXRhIjogeyJsaW1pdCI6IDEsICJuZXh0IjogIi9hcGkvcGFnZT9vZmZz
         ZXQ9MSZsaW1pdD0xJmxpbWl0PTEmZm9ybWF0PWpzb24iLCAib2Zmc2V0Ijog
-        MCwgInByZXZpb3VzIjogbnVsbCwgInRvdGFsX2NvdW50IjogNTh9LCAib2Jq
-        ZWN0cyI6IFt7ImNvbnRlbnQiOiAiPHRhYmxlPlxuXHQ8dGJvZHk+XG5cdFx0
-        PHRyPlxuXHRcdFx0PHRkIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogcmdi
-        KDIzMiwgMjM2LCAyMzkpO1wiPlxuXHRcdFx0XHQ8c3Ryb25nPkxvY2F0aW9u
-        PC9zdHJvbmc+PC90ZD5cblx0XHQ8L3RyPlxuXHRcdDx0cj5cblx0XHRcdDx0
-        ZD5cblx0XHRcdFx0UGxlYXNlIGZpbGwgaW4gYWRkcmVzczwvdGQ+XG5cdFx0
-        PC90cj5cblx0XHQ8dHI+XG5cdFx0XHQ8dGQgc3R5bGU9XCJiYWNrZ3JvdW5k
-        LWNvbG9yOiByZ2IoMjMyLCAyMzYsIDIzOSk7XCI+XG5cdFx0XHRcdDxzdHJv
-        bmc+SG91cnM8L3N0cm9uZz48L3RkPlxuXHRcdDwvdHI+XG5cdFx0PHRyPlxu
-        XHRcdFx0PHRkPlxuXHRcdFx0XHRQbGVhc2UgZmlsbCBpbiBob3VyczwvdGQ+
-        XG5cdFx0PC90cj5cblx0XHQ8dHI+XG5cdFx0XHQ8dGQgc3R5bGU9XCJiYWNr
-        Z3JvdW5kLWNvbG9yOiByZ2IoMjMyLCAyMzYsIDIzOSk7XCI+XG5cdFx0XHRc
-        dDxzdHJvbmc+UGhvbmU8L3N0cm9uZz48L3RkPlxuXHRcdDwvdHI+XG5cdFx0
-        PHRyPlxuXHRcdFx0PHRkPlxuXHRcdFx0XHQoNDE1KSA1NTUtNTU1NTwvdGQ+
-        XG5cdFx0PC90cj5cblx0XHQ8dHI+XG5cdFx0XHQ8dGQgc3R5bGU9XCJiYWNr
-        Z3JvdW5kLWNvbG9yOiByZ2IoMjMyLCAyMzYsIDIzOSk7XCI+XG5cdFx0XHRc
-        dDxzdHJvbmc+V2Vic2l0ZTwvc3Ryb25nPjwvdGQ+XG5cdFx0PC90cj5cblx0
-        XHQ8dHI+XG5cdFx0XHQ8dGQ+XG5cdFx0XHRcdEFkZCBsaW5rIGhlcmU8L3Rk
+        MCwgInByZXZpb3VzIjogbnVsbCwgInRvdGFsX2NvdW50IjogMTQxfSwgIm9i
+        amVjdHMiOiBbeyJjb250ZW50IjogIjx0YWJsZT5cblx0PHRib2R5PlxuXHRc
+        dDx0cj5cblx0XHRcdDx0ZCBzdHlsZT1cImJhY2tncm91bmQtY29sb3I6IHJn
+        YigyMzIsIDIzNiwgMjM5KTtcIj5cblx0XHRcdFx0PHN0cm9uZz5Mb2NhdGlv
+        bjwvc3Ryb25nPjwvdGQ+XG5cdFx0PC90cj5cblx0XHQ8dHI+XG5cdFx0XHQ8
+        dGQ+XG5cdFx0XHRcdFBsZWFzZSBmaWxsIGluIGFkZHJlc3M8L3RkPlxuXHRc
+        dDwvdHI+XG5cdFx0PHRyPlxuXHRcdFx0PHRkIHN0eWxlPVwiYmFja2dyb3Vu
+        ZC1jb2xvcjogcmdiKDIzMiwgMjM2LCAyMzkpO1wiPlxuXHRcdFx0XHQ8c3Ry
+        b25nPkhvdXJzPC9zdHJvbmc+PC90ZD5cblx0XHQ8L3RyPlxuXHRcdDx0cj5c
+        blx0XHRcdDx0ZD5cblx0XHRcdFx0UGxlYXNlIGZpbGwgaW4gaG91cnM8L3Rk
         PlxuXHRcdDwvdHI+XG5cdFx0PHRyPlxuXHRcdFx0PHRkIHN0eWxlPVwiYmFj
         a2dyb3VuZC1jb2xvcjogcmdiKDIzMiwgMjM2LCAyMzkpO1wiPlxuXHRcdFx0
-        XHQ8c3Ryb25nPkUtbWFpbDwvc3Ryb25nPjwvdGQ+XG5cdFx0PC90cj5cblx0
-        XHQ8dHI+XG5cdFx0XHQ8dGQ+XG5cdFx0XHRcdEVtYWlsIGFkZHJlc3M8L3Rk
+        XHQ8c3Ryb25nPlBob25lPC9zdHJvbmc+PC90ZD5cblx0XHQ8L3RyPlxuXHRc
+        dDx0cj5cblx0XHRcdDx0ZD5cblx0XHRcdFx0KDQxNSkgNTU1LTU1NTU8L3Rk
         PlxuXHRcdDwvdHI+XG5cdFx0PHRyPlxuXHRcdFx0PHRkIHN0eWxlPVwiYmFj
         a2dyb3VuZC1jb2xvcjogcmdiKDIzMiwgMjM2LCAyMzkpO1wiPlxuXHRcdFx0
-        XHQ8c3Ryb25nPk93bmVyKHMpPC9zdHJvbmc+PC90ZD5cblx0XHQ8L3RyPlxu
-        XHRcdDx0cj5cblx0XHRcdDx0ZD5cblx0XHRcdFx0TmFtZXMgb2Ygb3duZXJz
-        L3Byb3ByaWV0b3JzIGhlcmU8L3RkPlxuXHRcdDwvdHI+XG5cdFx0PHRyPlxu
-        XHRcdFx0PHRkIHN0eWxlPVwiYmFja2dyb3VuZC1jb2xvcjogcmdiKDIzMiwg
-        MjM2LCAyMzkpO1wiPlxuXHRcdFx0XHQ8c3Ryb25nPkVzdGFibGlzaGVkPC9z
-        dHJvbmc+PC90ZD5cblx0XHQ8L3RyPlxuXHRcdDx0cj5cblx0XHRcdDx0ZD5c
-        blx0XHRcdFx0RGF0ZSwgaS5lLiBZWVlZLU1NLUREPC90ZD5cblx0XHQ8L3Ry
-        PlxuXHRcdDx0cj5cblx0XHRcdDx0ZCBzdHlsZT1cImJhY2tncm91bmQtY29s
-        b3I6IHJnYigyMzIsIDIzNiwgMjM5KTtcIj5cblx0XHRcdFx0PHN0cm9uZz5Q
-        YXltZW50IE1ldGhvZDwvc3Ryb25nPjwvdGQ+XG5cdFx0PC90cj5cblx0XHQ8
-        dHI+XG5cdFx0XHQ8dGQ+XG5cdFx0XHRcdFR5cGUgb2YgcGF5bWVudDwvdGQ+
-        XG5cdFx0PC90cj5cblx0XHQ8dHI+XG5cdFx0XHQ8dGQgc3R5bGU9XCJiYWNr
-        Z3JvdW5kLWNvbG9yOiByZ2IoMjMyLCAyMzYsIDIzOSk7XCI+XG5cdFx0XHRc
-        dDxzdHJvbmc+V2hlZWxjaGFpciBhY2Nlc3NpYmlsaXR5PC9zdHJvbmc+PC90
-        ZD5cblx0XHQ8L3RyPlxuXHRcdDx0cj5cblx0XHRcdDx0ZD5cblx0XHRcdFx0
-        c3RhaXJzLCBiYXRocm9vbXMsIGhhbmRyYWlscywgYWlzbGUgd2lkdGg/PC90
-        ZD5cblx0XHQ8L3RyPlxuXHQ8L3Rib2R5PlxuPC90YWJsZT5cbjxwPlxuXHRU
-        aGVuLCBwdXTCoDxlbT53aGF0ZXZlcjwvZW0+wqB5b3Ugd2FudCBkb3duIGhl
-        cmUhIE5vdGUgdGhhdMKgPGEgaHJlZj1cImh0dHA6Ly9sb2NhbC5nb29nbGUu
-        Y29tXCI+aHR0cDovL2xvY2FsLmdvb2dsZS5jb208L2E+wqBpcyBzb21ldGlt
-        ZXMgYSBnb29kIGFuZCBlYXN5IHBsYWNlIHRvIGZpbmQgdGltZXMvcGhvbmUu
-        IEJldHRlciB5ZXQsIGxvb2sgdGhlbSB1cCBpbiB0aGUgcGhvbmUgYm9vaywg
-        YW5kIGFzayB0aGVtLiBSZW1vdmUgdGhlIGZpZWxkcyB5b3UgZG9uJ3QgZmls
-        bCBvdXQg4oCUIG9yIGV2ZW4gYmV0dGVyLCBsb29rIHVwIG9yIGNhbGwgdGhl
-        bSBmb3IgdGhlIG1pc3NpbmcgaW5mb3JtYXRpb24hPC9wPlxuPGgzPlxuXHRS
-        ZWxhdGVkIExpbmtzPC9oMz5cbjx1bD5cblx0PGxpPlxuXHRcdDxhIGhyZWY9
-        XCJTaG9wcGluZ1wiPlNob3BwaW5nPC9hPjwvbGk+XG48L3VsPlxuPHA+XG5c
-        dMKgPC9wPlxuIiwgImlkIjogMSwgIm1hcCI6IG51bGwsICJuYW1lIjogIlRl
-        bXBsYXRlcy9CdXNpbmVzcyIsICJwYWdlX3RhZ3MiOiBudWxsLCAicmVzb3Vy
-        Y2VfdXJpIjogIi9hcGkvcGFnZS9UZW1wbGF0ZXMvQnVzaW5lc3MiLCAic2x1
-        ZyI6ICJ0ZW1wbGF0ZXMvYnVzaW5lc3MifV19
+        XHQ8c3Ryb25nPldlYnNpdGU8L3N0cm9uZz48L3RkPlxuXHRcdDwvdHI+XG5c
+        dFx0PHRyPlxuXHRcdFx0PHRkPlxuXHRcdFx0XHRBZGQgbGluayBoZXJlPC90
+        ZD5cblx0XHQ8L3RyPlxuXHRcdDx0cj5cblx0XHRcdDx0ZCBzdHlsZT1cImJh
+        Y2tncm91bmQtY29sb3I6IHJnYigyMzIsIDIzNiwgMjM5KTtcIj5cblx0XHRc
+        dFx0PHN0cm9uZz5FLW1haWw8L3N0cm9uZz48L3RkPlxuXHRcdDwvdHI+XG5c
+        dFx0PHRyPlxuXHRcdFx0PHRkPlxuXHRcdFx0XHRFbWFpbCBhZGRyZXNzPC90
+        ZD5cblx0XHQ8L3RyPlxuXHRcdDx0cj5cblx0XHRcdDx0ZCBzdHlsZT1cImJh
+        Y2tncm91bmQtY29sb3I6IHJnYigyMzIsIDIzNiwgMjM5KTtcIj5cblx0XHRc
+        dFx0PHN0cm9uZz5Pd25lcihzKTwvc3Ryb25nPjwvdGQ+XG5cdFx0PC90cj5c
+        blx0XHQ8dHI+XG5cdFx0XHQ8dGQ+XG5cdFx0XHRcdE5hbWVzIG9mIG93bmVy
+        cy9wcm9wcmlldG9ycyBoZXJlPC90ZD5cblx0XHQ8L3RyPlxuXHRcdDx0cj5c
+        blx0XHRcdDx0ZCBzdHlsZT1cImJhY2tncm91bmQtY29sb3I6IHJnYigyMzIs
+        IDIzNiwgMjM5KTtcIj5cblx0XHRcdFx0PHN0cm9uZz5Fc3RhYmxpc2hlZDwv
+        c3Ryb25nPjwvdGQ+XG5cdFx0PC90cj5cblx0XHQ8dHI+XG5cdFx0XHQ8dGQ+
+        XG5cdFx0XHRcdERhdGUsIGkuZS4gWVlZWS1NTS1ERDwvdGQ+XG5cdFx0PC90
+        cj5cblx0XHQ8dHI+XG5cdFx0XHQ8dGQgc3R5bGU9XCJiYWNrZ3JvdW5kLWNv
+        bG9yOiByZ2IoMjMyLCAyMzYsIDIzOSk7XCI+XG5cdFx0XHRcdDxzdHJvbmc+
+        UGF5bWVudCBNZXRob2Q8L3N0cm9uZz48L3RkPlxuXHRcdDwvdHI+XG5cdFx0
+        PHRyPlxuXHRcdFx0PHRkPlxuXHRcdFx0XHRUeXBlIG9mIHBheW1lbnQ8L3Rk
+        PlxuXHRcdDwvdHI+XG5cdFx0PHRyPlxuXHRcdFx0PHRkIHN0eWxlPVwiYmFj
+        a2dyb3VuZC1jb2xvcjogcmdiKDIzMiwgMjM2LCAyMzkpO1wiPlxuXHRcdFx0
+        XHQ8c3Ryb25nPldoZWVsY2hhaXIgYWNjZXNzaWJpbGl0eTwvc3Ryb25nPjwv
+        dGQ+XG5cdFx0PC90cj5cblx0XHQ8dHI+XG5cdFx0XHQ8dGQ+XG5cdFx0XHRc
+        dHN0YWlycywgYmF0aHJvb21zLCBoYW5kcmFpbHMsIGFpc2xlIHdpZHRoPzwv
+        dGQ+XG5cdFx0PC90cj5cblx0PC90Ym9keT5cbjwvdGFibGU+XG48cD5cblx0
+        VGhlbiwgcHV0wqA8ZW0+d2hhdGV2ZXI8L2VtPsKgeW91IHdhbnQgZG93biBo
+        ZXJlISBOb3RlIHRoYXTCoDxhIGhyZWY9XCJodHRwOi8vbG9jYWwuZ29vZ2xl
+        LmNvbVwiPmh0dHA6Ly9sb2NhbC5nb29nbGUuY29tPC9hPsKgaXMgc29tZXRp
+        bWVzIGEgZ29vZCBhbmQgZWFzeSBwbGFjZSB0byBmaW5kIHRpbWVzL3Bob25l
+        LiBCZXR0ZXIgeWV0LCBsb29rIHRoZW0gdXAgaW4gdGhlIHBob25lIGJvb2ss
+        IGFuZCBhc2sgdGhlbS4gUmVtb3ZlIHRoZSBmaWVsZHMgeW91IGRvbid0IGZp
+        bGwgb3V0IOKAlCBvciBldmVuIGJldHRlciwgbG9vayB1cCBvciBjYWxsIHRo
+        ZW0gZm9yIHRoZSBtaXNzaW5nIGluZm9ybWF0aW9uITwvcD5cbjxoMz5cblx0
+        UmVsYXRlZCBMaW5rczwvaDM+XG48dWw+XG5cdDxsaT5cblx0XHQ8YSBocmVm
+        PVwiU2hvcHBpbmdcIj5TaG9wcGluZzwvYT48L2xpPlxuPC91bD5cbjxwPlxu
+        XHTCoDwvcD5cbiIsICJpZCI6IDEsICJtYXAiOiBudWxsLCAibmFtZSI6ICJU
+        ZW1wbGF0ZXMvQnVzaW5lc3MiLCAicGFnZV90YWdzIjogbnVsbCwgInJlc291
+        cmNlX3VyaSI6ICIvYXBpL3BhZ2UvVGVtcGxhdGVzL0J1c2luZXNzIiwgInNs
+        dWciOiAidGVtcGxhdGVzL2J1c2luZXNzIn1dfQ==
     http_version: 
-  recorded_at: Sat, 16 Mar 2013 01:07:22 GMT
+  recorded_at: Fri, 29 Mar 2013 02:06:39 GMT
 - request:
     method: get
     uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/user?format=json&limit=1
@@ -186,23 +186,23 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
+      - '*/*'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 16 Mar 2013 01:07:53 GMT
+      - Fri, 29 Mar 2013 02:07:24 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
       Transfer-Encoding:
@@ -210,13 +210,13 @@ http_interactions:
       Content-Type:
       - application/vnd.api.v1+json; charset=utf-8
     body:
-      encoding: US-ASCII
-      string: ! '{"meta": {"limit": 1, "next": "/api/user?offset=1&limit=1&limit=1&format=json",
+      encoding: UTF-8
+      string: '{"meta": {"limit": 1, "next": "/api/user?offset=1&limit=1&limit=1&format=json",
         "offset": 0, "previous": null, "total_count": 10}, "objects": [{"date_joined":
         "2013-02-17T01:54:39.818130", "first_name": "", "last_name": "", "resource_uri":
         "", "username": "AnonymousUser"}]}'
     http_version: 
-  recorded_at: Sat, 16 Mar 2013 01:07:22 GMT
+  recorded_at: Fri, 29 Mar 2013 02:06:39 GMT
 - request:
     method: get
     uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/file?format=json&limit=1
@@ -224,23 +224,23 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
+      - '*/*'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 16 Mar 2013 01:07:53 GMT
+      - Fri, 29 Mar 2013 02:07:24 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
       Transfer-Encoding:
@@ -248,11 +248,13 @@ http_interactions:
       Content-Type:
       - application/vnd.api.v1+json; charset=utf-8
     body:
-      encoding: US-ASCII
-      string: ! '{"meta": {"limit": 1, "next": null, "offset": 0, "previous": null,
-        "total_count": 0}, "objects": []}'
+      encoding: UTF-8
+      string: '{"meta": {"limit": 1, "next": null, "offset": 0, "previous": null,
+        "total_count": 1}, "objects": [{"file": "/media/pages/files/lkl77lz3z0csg0tx.gif",
+        "id": 1, "name": "ajax-loader(2).gif", "resource_uri": "/api/file/1", "slug":
+        "front page"}]}'
     http_version: 
-  recorded_at: Sat, 16 Mar 2013 01:07:22 GMT
+  recorded_at: Fri, 29 Mar 2013 02:06:39 GMT
 - request:
     method: get
     uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/map?format=json&limit=1
@@ -260,23 +262,23 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
+      - '*/*'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 16 Mar 2013 01:07:53 GMT
+      - Fri, 29 Mar 2013 02:07:24 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
       Transfer-Encoding:
@@ -284,11 +286,15 @@ http_interactions:
       Content-Type:
       - application/vnd.api.v1+json; charset=utf-8
     body:
-      encoding: US-ASCII
-      string: ! '{"meta": {"limit": 1, "next": null, "offset": 0, "previous": null,
-        "total_count": 0}, "objects": []}'
+      encoding: UTF-8
+      string: '{"meta": {"limit": 1, "next": null, "offset": 0, "previous": null,
+        "total_count": 1}, "objects": [{"geom": {"geometries": [{"coordinates": [-122.450771,
+        37.762443], "type": "Point"}], "type": "GeometryCollection"}, "id": 1, "length":
+        0.0, "lines": null, "page": "/api/page/Front_Page", "points": {"coordinates":
+        [[-122.450771, 37.762443]], "type": "MultiPoint"}, "polys": null, "resource_uri":
+        "/api/map/Front_Page"}]}'
     http_version: 
-  recorded_at: Sat, 16 Mar 2013 01:07:22 GMT
+  recorded_at: Fri, 29 Mar 2013 02:06:40 GMT
 - request:
     method: get
     uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/tag?format=json&limit=1
@@ -296,23 +302,23 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
+      - '*/*'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 16 Mar 2013 01:07:53 GMT
+      - Fri, 29 Mar 2013 02:07:24 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
       Transfer-Encoding:
@@ -320,12 +326,12 @@ http_interactions:
       Content-Type:
       - application/vnd.api.v1+json; charset=utf-8
     body:
-      encoding: US-ASCII
-      string: ! '{"meta": {"limit": 1, "next": "/api/tag?offset=1&limit=1&limit=1&format=json",
+      encoding: UTF-8
+      string: '{"meta": {"limit": 1, "next": "/api/tag?offset=1&limit=1&limit=1&format=json",
         "offset": 0, "previous": null, "total_count": 5}, "objects": [{"id": 5, "name":
         "cats_test", "resource_uri": "/api/tag/cats_test", "slug": "cats_test"}]}'
     http_version: 
-  recorded_at: Sat, 16 Mar 2013 01:07:22 GMT
+  recorded_at: Fri, 29 Mar 2013 02:06:40 GMT
 - request:
     method: get
     uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page_tags?format=json&limit=1
@@ -333,23 +339,23 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
+      - '*/*'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 16 Mar 2013 01:07:53 GMT
+      - Fri, 29 Mar 2013 02:07:25 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
       Transfer-Encoding:
@@ -357,10 +363,10 @@ http_interactions:
       Content-Type:
       - application/vnd.api.v1+json; charset=utf-8
     body:
-      encoding: US-ASCII
-      string: ! '{"meta": {"limit": 1, "next": "/api/page_tags?offset=1&limit=1&limit=1&format=json",
+      encoding: UTF-8
+      string: '{"meta": {"limit": 1, "next": "/api/page_tags?offset=1&limit=1&limit=1&format=json",
         "offset": 0, "previous": null, "total_count": 2}, "objects": [{"id": 5, "page":
         "/api/page/cats", "resource_uri": "/api/page_tags/cats", "tags": []}]}'
     http_version: 
-  recorded_at: Sat, 16 Mar 2013 01:07:23 GMT
+  recorded_at: Fri, 29 Mar 2013 02:06:40 GMT
 recorded_with: VCR 2.4.0

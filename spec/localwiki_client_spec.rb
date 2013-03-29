@@ -13,16 +13,16 @@ describe 'LocalwikiClient' do
 
   context 'attributes' do
 
-    context '#site_name' do
-      it { @wiki.site_name.should eq 'example.com' }
+    context '#name' do
+      it { @wiki.site.name.should eq 'example.com' }
     end
 
     context '#time_zone' do
-      it { @wiki.time_zone.should eq 'America/Chicago' }
+      it { @wiki.site.time_zone.should eq 'America/Chicago' }
     end
 
     context '#language_code' do
-      it { @wiki.language_code.should eq 'en-us' }
+      it { @wiki.site.language_code.should eq 'en-us' }
     end
 
     %W{site page user file map tag page_tags}.each do |resource|

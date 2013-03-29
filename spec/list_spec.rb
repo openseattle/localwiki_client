@@ -29,7 +29,7 @@ describe 'LocalwikiClient' do
 
       it "#list('#{resource}') returns collection of #{resource} objects" do
         VCR.use_cassette "list_#{resource}_success", :match_requests_on => [:method, :path] do
-          @wiki.list(resource)['objects'].last.should have_key field
+          @wiki.list(resource).last.should respond_to field.intern
         end
       end
 
@@ -38,7 +38,7 @@ describe 'LocalwikiClient' do
     it "limit parameter limits number of resources returned" do
       VCR.use_cassette 'list_limit_success', :match_requests_on => [:method, :path] do
         response = @wiki.list('page', 3)
-        response['objects'].length.should eq 3
+        response.length.should eq 3
       end
     end
 

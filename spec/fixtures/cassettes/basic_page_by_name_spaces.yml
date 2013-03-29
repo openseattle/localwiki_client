@@ -2,28 +2,28 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/Test_Page0c230d1d-7442-42f2-bbc9-e2768c5a562e?format=json
+    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/Test_Pagec2026982-a27d-414a-baff-8c23b703d958?format=json
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
+      - '*/*'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 16 Mar 2013 01:07:52 GMT
+      - Fri, 29 Mar 2013 02:07:17 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
       Transfer-Encoding:
@@ -31,11 +31,11 @@ http_interactions:
       Content-Type:
       - application/vnd.api.v1+json; charset=utf-8
     body:
-      encoding: US-ASCII
-      string: ! '{"content": "<p>Created page with spaces!</p>", "id": 255, "map":
-        null, "name": "Test Page0c230d1d-7442-42f2-bbc9-e2768c5a562e", "page_tags":
-        null, "resource_uri": "/api/page/Test_Page0c230d1d-7442-42f2-bbc9-e2768c5a562e",
-        "slug": "test page0c230d1d-7442-42f2-bbc9-e2768c5a562e"}'
+      encoding: UTF-8
+      string: '{"content": "<p>Created page with spaces!</p>", "id": 365, "map": null,
+        "name": "Test Pagec2026982-a27d-414a-baff-8c23b703d958", "page_tags": null,
+        "resource_uri": "/api/page/Test_Pagec2026982-a27d-414a-baff-8c23b703d958",
+        "slug": "test pagec2026982-a27d-414a-baff-8c23b703d958"}'
     http_version: 
-  recorded_at: Sat, 16 Mar 2013 01:07:21 GMT
+  recorded_at: Fri, 29 Mar 2013 02:06:32 GMT
 recorded_with: VCR 2.4.0

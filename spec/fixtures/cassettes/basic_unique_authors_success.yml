@@ -5,71 +5,75 @@ http_interactions:
     uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/
     body:
       encoding: UTF-8
-      string: ! '{"name":"TestPage72aa8993-bc09-4010-af55-e161b64929bb","content":"<p>Created!</p>"}'
+      string: '{"name":"TestPage2b11303c-bca4-4f0b-9a81-47f8f3457a6c","content":"<p>Created!</p>"}'
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Content-Type:
       - application/json
       Authorization:
       - ApiKey testuser:key
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
+      - '*/*'
   response:
     status:
       code: 201
       message: CREATED
     headers:
       Date:
-      - Sat, 16 Mar 2013 05:14:52 GMT
+      - Fri, 29 Mar 2013 02:07:18 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Vary:
       - Cookie,Accept-Encoding
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
       Set-Cookie:
-      - sessionid=4718abd955b8a9a6ad1fe1508702c92b; expires=Sat, 30-Mar-2013 05:14:52
+      - sessionid=30b53a8ed6b896c255a20dfc7f16cdff; expires=Fri, 12-Apr-2013 02:07:19
         GMT; Max-Age=1209600; Path=/
       Location:
-      - http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/TestPage72aa8993-bc09-4010-af55-e161b64929bb
+      - http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/TestPage2b11303c-bca4-4f0b-9a81-47f8f3457a6c
       Content-Length:
-      - '0'
+      - '20'
       Content-Type:
       - text/html; charset=utf-8
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Sat, 16 Mar 2013 05:14:21 GMT
+  recorded_at: Fri, 29 Mar 2013 02:06:34 GMT
 - request:
     method: put
-    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/TestPage72aa8993-bc09-4010-af55-e161b64929bb
+    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/TestPage2b11303c-bca4-4f0b-9a81-47f8f3457a6c
     body:
       encoding: UTF-8
-      string: ! '{"content":"<p>foo</p>"}'
+      string: '{"content":"<p>foo</p>"}'
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Content-Type:
       - application/json
       Authorization:
       - ApiKey testuser:key
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
+      - '*/*'
   response:
     status:
       code: 204
       message: NO CONTENT
     headers:
       Date:
-      - Sat, 16 Mar 2013 05:14:52 GMT
+      - Fri, 29 Mar 2013 02:07:19 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
       Content-Length:
@@ -79,34 +83,34 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Sat, 16 Mar 2013 05:14:21 GMT
+  recorded_at: Fri, 29 Mar 2013 02:06:35 GMT
 - request:
     method: get
-    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page_version?format=json&name=TestPage72aa8993-bc09-4010-af55-e161b64929bb
+    uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page_version?format=json&name=TestPage2b11303c-bca4-4f0b-9a81-47f8f3457a6c
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
+      - '*/*'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 16 Mar 2013 05:14:53 GMT
+      - Fri, 29 Mar 2013 02:07:19 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
       Transfer-Encoding:
@@ -114,17 +118,17 @@ http_interactions:
       Content-Type:
       - application/vnd.api.v1+json; charset=utf-8
     body:
-      encoding: US-ASCII
-      string: ! '{"meta": {"limit": 20, "next": null, "offset": 0, "previous": null,
+      encoding: UTF-8
+      string: '{"meta": {"limit": 20, "next": null, "offset": 0, "previous": null,
         "total_count": 2}, "objects": [{"content": "<p>foo</p>", "history_comment":
-        null, "history_date": "2013-03-16T00:14:52.750925", "history_id": 720, "history_type":
-        1, "history_user": "/api/user/2", "history_user_ip": "70.89.154.169", "id":
-        286, "name": "TestPage72aa8993-bc09-4010-af55-e161b64929bb", "resource_uri":
-        "/api/page_version/720", "slug": "testpage72aa8993-bc09-4010-af55-e161b64929bb"},
-        {"content": "<p>Created!</p>", "history_comment": null, "history_date": "2013-03-16T00:14:52.322231",
-        "history_id": 719, "history_type": 0, "history_user": "/api/user/2", "history_user_ip":
-        "70.89.154.169", "id": 286, "name": "TestPage72aa8993-bc09-4010-af55-e161b64929bb",
-        "resource_uri": "/api/page_version/719", "slug": "testpage72aa8993-bc09-4010-af55-e161b64929bb"}]}'
+        null, "history_date": "2013-03-28T21:07:19.378560", "history_id": 872, "history_type":
+        1, "history_user": "/api/user/9", "history_user_ip": "70.89.154.169", "id":
+        367, "name": "TestPage2b11303c-bca4-4f0b-9a81-47f8f3457a6c", "resource_uri":
+        "/api/page_version/872", "slug": "testpage2b11303c-bca4-4f0b-9a81-47f8f3457a6c"},
+        {"content": "<p>Created!</p>", "history_comment": null, "history_date": "2013-03-28T21:07:18.963960",
+        "history_id": 871, "history_type": 0, "history_user": "/api/user/9", "history_user_ip":
+        "70.89.154.169", "id": 367, "name": "TestPage2b11303c-bca4-4f0b-9a81-47f8f3457a6c",
+        "resource_uri": "/api/page_version/871", "slug": "testpage2b11303c-bca4-4f0b-9a81-47f8f3457a6c"}]}'
     http_version: 
-  recorded_at: Sat, 16 Mar 2013 05:14:22 GMT
+  recorded_at: Fri, 29 Mar 2013 02:06:35 GMT
 recorded_with: VCR 2.4.0

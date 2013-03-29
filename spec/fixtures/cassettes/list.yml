@@ -7,29 +7,29 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - '*/*'
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Mon, 18 Mar 2013 16:01:07 GMT
+      - Fri, 29 Mar 2013 02:07:20 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
       - '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
-      Content-Type:
-      - application/vnd.api.v1+json;charset=utf-8
       Transfer-Encoding:
       - chunked
+      Content-Type:
+      - application/vnd.api.v1+json; charset=utf-8
     body:
       encoding: UTF-8
       string: '{"domain": "example.com", "id": 1, "language_code": "en-us", "license":
@@ -42,15 +42,17 @@ http_interactions:
         See <a href=\"/Copyrights\" target=\"_blank\">Copyrights</a>.", "time_zone":
         "America/Chicago"}'
     http_version: 
-  recorded_at: Mon, 18 Mar 2013 16:00:33 GMT
+  recorded_at: Fri, 29 Mar 2013 02:06:35 GMT
 - request:
     method: post
     uri: http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/
     body:
       encoding: UTF-8
-      string: '{"name":"TestPageForListingb14a570f-8f4e-4f38-bd40-2c005b83f3dd","content":"<p>Created
-        List Test Page TestPageForListingb14a570f-8f4e-4f38-bd40-2c005b83f3dd!</p>"}'
+      string: '{"name":"TestPageForListing1919d719-92ed-43e1-8fa8-70db2967ba4b","content":"<p>Created
+        List Test Page TestPageForListing1919d719-92ed-43e1-8fa8-70db2967ba4b!</p>"}'
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Content-Type:
       - application/json
       Authorization:
@@ -59,15 +61,13 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - '*/*'
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 201
       message: CREATED
     headers:
       Date:
-      - Mon, 18 Mar 2013 16:01:07 GMT
+      - Fri, 29 Mar 2013 02:07:20 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Vary:
@@ -77,17 +77,17 @@ http_interactions:
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
       Set-Cookie:
-      - sessionid=8a56f3ad8d59883651a8d8c23f6d71a2; expires=Mon, 01-Apr-2013 16:01:08
+      - sessionid=b3db2d56154b260ffb2ee89de2f35693; expires=Fri, 12-Apr-2013 02:07:20
         GMT; Max-Age=1209600; Path=/
       Location:
-      - http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/TestPageForListingb14a570f-8f4e-4f38-bd40-2c005b83f3dd
-      Content-Type:
-      - text/html;charset=utf-8
+      - http://ec2-54-234-151-52.compute-1.amazonaws.com/api/page/TestPageForListing1919d719-92ed-43e1-8fa8-70db2967ba4b
       Content-Length:
       - '20'
+      Content-Type:
+      - text/html; charset=utf-8
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Mon, 18 Mar 2013 16:00:34 GMT
+  recorded_at: Fri, 29 Mar 2013 02:06:36 GMT
 recorded_with: VCR 2.4.0

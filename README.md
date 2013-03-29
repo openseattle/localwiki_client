@@ -5,7 +5,7 @@ LocalwikiClient
 Synopsis
 --------
 
-A thin client for the Localwiki API
+A helper client for the Localwiki API
 
 http://localwiki.readthedocs.org/en/latest/api.html
 
@@ -23,26 +23,34 @@ Usage
 
     # read access
     wiki = LocalwikiClient.new 'seattlewiki.net'
-    wiki.site_name
+    wiki.site.name
     => SeattleWiki
-    wiki.count('user')
+    wiki.count(:user)
     => 47
+    map = wiki.fetch(:map, 'Luna Park Cafe')
+    => #<Localwiki::Map>
+    map.page
+    => '/api/page/Luna_Park_Cafe'
+    map.single_point?
+    => true
+    [map.lat, map.long]
+    => [47.570641, -122.370919]
 
     # write access
     wiki = LocalwikiClient.new 'seattlewiki.net', 'myusername', 'myapikey'
-    page_json = {name: 'Current Events', content: 'Coming Soon!'}.to_json
-    response = wiki.create('page', page_json)
+    json = {name: 'Current Events', content: 'Coming Soon!'}.to_json
+    response = wiki.create(:page, json)
     response.status
     => 201
 
 Features / Problems
 -------------------
 
-* #create, #read (#fetch), #update, #delete provide basic CRUD functionality
-* #list fetches all (or with a limit) of a specific type of resource
-* #fetch_version retrieves version history for a resource
+* \#create, #read (#fetch), #update, #delete provide basic CRUD functionality
+* \#list fetches all (or with a limit) of a specific type of resource
+* \#fetch_version retrieves version history for a resource
 * a few helper methods exist, more to come
-    * #count, #page_by_name, #unique_authors
+* \#count, #page_by_name, #unique_authors
 
 
 Compatibility

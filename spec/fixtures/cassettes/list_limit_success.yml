@@ -7,35 +7,35 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - '*/*'
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Mon, 18 Mar 2013 15:52:36 GMT
+      - Fri, 29 Mar 2013 02:07:23 GMT
       Server:
       - Apache/2.2.22 (Ubuntu)
       Access-Control-Allow-Origin:
       - '*'
       Access-Control-Allow-Methods:
       - POST,GET,OPTIONS,PUT,DELETE
-      Content-Type:
-      - application/vnd.api.v1+json;charset=utf-8
       Transfer-Encoding:
       - chunked
+      Content-Type:
+      - application/vnd.api.v1+json; charset=utf-8
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJtZXRhIjogeyJsaW1pdCI6IDMsICJuZXh0IjogIi9hcGkvcGFnZT9vZmZz
         ZXQ9MyZsaW1pdD0zJmxpbWl0PTMmZm9ybWF0PWpzb24iLCAib2Zmc2V0Ijog
-        MCwgInByZXZpb3VzIjogbnVsbCwgInRvdGFsX2NvdW50IjogMTI3fSwgIm9i
+        MCwgInByZXZpb3VzIjogbnVsbCwgInRvdGFsX2NvdW50IjogMTQxfSwgIm9i
         amVjdHMiOiBbeyJjb250ZW50IjogIjx0YWJsZT5cblx0PHRib2R5PlxuXHRc
         dDx0cj5cblx0XHRcdDx0ZCBzdHlsZT1cImJhY2tncm91bmQtY29sb3I6IHJn
         YigyMzIsIDIzNiwgMjM5KTtcIj5cblx0XHRcdFx0PHN0cm9uZz5Mb2NhdGlv
@@ -120,5 +120,5 @@ http_interactions:
         OiAiL2FwaS9wYWdlL1RlbXBsYXRlcy9Vc2VyIiwgInNsdWciOiAidGVtcGxh
         dGVzL3VzZXIifV19
     http_version: 
-  recorded_at: Mon, 18 Mar 2013 15:52:02 GMT
+  recorded_at: Fri, 29 Mar 2013 02:06:38 GMT
 recorded_with: VCR 2.4.0
