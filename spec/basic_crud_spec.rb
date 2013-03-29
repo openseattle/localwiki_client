@@ -27,8 +27,8 @@ describe 'LocalwikiClient' do
 
     it "#read('page', pagename) returns page content" do
       VCR.use_cassette 'basic_crud_read_success', :match_requests_on => [:method, @path_matcher] do
-        response = @wiki.read('page', @pagename)
-        response["content"].should match(/Created!/)
+        page = @wiki.read('page', @pagename)
+        page.content.should match(/Created!/)
       end
     end
 

@@ -183,7 +183,7 @@ module Localwiki
     # @param [String] hostname localwiki server hostname
     def initialize_connection(hostname)
       @conn = Faraday.new :url => hostname
-      @site = hydrate(:site, fetch('site','1'))
+      @site = fetch('site','1')
     end
   
     ##
