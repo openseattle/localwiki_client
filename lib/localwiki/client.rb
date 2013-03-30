@@ -204,10 +204,8 @@ module Localwiki
     # @return [Faraday::Response] http response object
     def http_post(path, json)
       @conn.post do |req|
-        req.url full_url(path)
-        req.headers['Content-Type'] = 'application/json'
-        req.headers['Authorization'] = "ApiKey #{@user}:#{@apikey}"
-        req.body = json
+        configure_request req, path, json
+        authorize_request req
       end
     end
     
@@ -218,10 +216,8 @@ module Localwiki
     # @return [Faraday::Response] http response object
     def http_put(path, json)
       @conn.put do |req|
-        req.url full_url(path)
-        req.headers['Content-Type'] = 'application/json'
-        req.headers['Authorization'] = "ApiKey #{@user}:#{@apikey}"
-        req.body = json
+        configure_request req, path, json
+        authorize_request req
       end
     end
 
@@ -231,9 +227,8 @@ module Localwiki
     # @return [Faraday::Response] http response object
     def http_delete(path)
       @conn.delete do |req|
-        req.url full_url(path)
-        req.headers['Content-Type'] = 'application/json'
-        req.headers['Authorization'] = "ApiKey #{@user}:#{@apikey}"
+        configure_request req, path
+        authorize_request req
       end
     end
 
@@ -243,6 +238,24 @@ module Localwiki
     # @return [String]
     def slugify(string)
       string.to_s.strip.gsub(' ', "_")
+    end
+
+    ##
+    # set request parameters
+    # @param req Faraday request object
+    # @param path request path
+    # @param json json string
+    def configure_request(req, path, json=nil)
+      req.headers['Content-Type'] = 'application/json'
+      req.url full_url(path)
+      req.body = json
+    end
+
+    ##
+    # set request authorization header
+    # @param req Faraday request object
+    def authorize_request(req)
+      req.headers['Authorization'] = "ApiKey #{@user}:#{@apikey}"
     end
 
   end
