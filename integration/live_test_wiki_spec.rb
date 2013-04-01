@@ -51,11 +51,11 @@ describe 'LIVE testwiki instance' do
     end
 
     it "returns collection of resources objects" do
-      @response['objects'].first.keys.length.should be > 1
+      @response.first.class.superclass.should eq Localwiki::Resource
     end
 
     it "limit parameter limits number of resources returned" do
-      @response['objects'].length.should eq 2
+      @response.length.should eq 2
     end
 
   end
