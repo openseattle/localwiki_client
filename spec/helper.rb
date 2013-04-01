@@ -16,8 +16,11 @@ VCR.configure do |c|
   # c.debug_logger = File.open('spec/fixtures/cassettes/debug_vcr.log', 'w')
 end
 
-unless ENV['localwiki_client_user'] && ENV['localwiki_client_apikey']
+unless ENV['localwiki_client_server'] && ENV['localwiki_client_user'] && ENV['localwiki_client_apikey']
   puts "\nTo add or modify tests in the spec folder you need to do two things:"
-  puts "\tContact sethvincent@gmail.com to request a username and apikey on the test server."
-  puts "\tSet these two environment variables:\n\t\texport localwiki_client_user=USERNAME\n\t\texport localwiki_client_apikey=APIKEY"
+  puts "\tContact a test server admin to request the hostname, and a username / apikey for your test server."
+  puts "\tSet these three environment variables (working example given):"
+  puts "\t\texport localwiki_client_server=ec2-54-234-151-52.compute-1.amazonaws.com"
+  puts "\t\texport localwiki_client_user=testuser"
+  puts "\t\texport localwiki_client_apikey=1ff0ed07625365b8d5589f17088f43b5ae227793"
 end

@@ -6,7 +6,7 @@ describe 'LocalwikiClient' do
 
     before(:all) do
       VCR.insert_cassette 'basic', :record => :new_episodes
-      @wiki = Localwiki::Client.new 'ec2-54-234-151-52.compute-1.amazonaws.com',
+      @wiki = Localwiki::Client.new ENV['localwiki_client_server'],
                                     ENV['localwiki_client_user'],
                                     ENV['localwiki_client_apikey']
     end
