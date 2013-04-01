@@ -1,4 +1,5 @@
 require 'faraday'
+require 'faraday_middleware'
 require 'json'
 
 module Localwiki
@@ -182,8 +183,13 @@ module Localwiki
     # initialize Faraday::Connection instance. set @conn and @site
     # @param [String] hostname localwiki server hostname
     def initialize_connection(hostname)
-      @conn = Faraday.new :url => hostname
+      @conn = Faraday.new :url => hostname do |config|
+        config.use FaradayMiddleware::FollowRedirects, limit: 3
+        # config.use Faraday::Response::RaiseError       # raise exceptions on 40x, 50x responses
+        config.adapter Faraday.default_adapter
+      end
       @site = fetch('site','1')
+      raise "Connection failed. #{@site.status} error returned from #{hostname}." if @site.respond_to? :status
     end
   
     ##
