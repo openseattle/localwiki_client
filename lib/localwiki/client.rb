@@ -162,7 +162,7 @@ module Localwiki
     # @return [Localwiki::Resource, Faraday::Response] resource object, or http response object
     def hydrate(resource_type,param)
       # skip if given an http response object
-      return param if param.respond_to? :status
+      return param if param.kind_of? Faraday::Response
       Localwiki::make_one(resource_type,param)
     end
 
@@ -173,7 +173,7 @@ module Localwiki
     # @return [Array, Faraday::Response] array of resource objects, or http response object
     def hydrate_list(resource_type,param)
       # skip if given an http response object
-      return param if param.respond_to? :status
+      return param if param.kind_of? Faraday::Response
       param.collect do |json_hash|
         Localwiki::make_one(resource_type,json_hash)
       end
@@ -183,13 +183,13 @@ module Localwiki
     # initialize Faraday::Connection instance. set @conn and @site
     # @param [String] hostname localwiki server hostname
     def initialize_connection(hostname)
-      @conn = Faraday.new :url => hostname do |config|
+      @conn = Faraday.new url: hostname do |config|
         config.use FaradayMiddleware::FollowRedirects, limit: 3
         # config.use Faraday::Response::RaiseError       # raise exceptions on 40x, 50x responses
         config.adapter Faraday.default_adapter
       end
       @site = fetch('site','1')
-      raise "Connection failed. #{@site.status} error returned from #{hostname}." if @site.respond_to? :status
+      raise "Connection failed. #{@site.status} error returned from #{hostname}." if @site.kind_of? Faraday::Response
     end
   
     ##
