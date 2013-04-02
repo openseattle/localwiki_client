@@ -43,6 +43,8 @@ Usage
     response.status
     => 201
 
+More examples scripts can be found in the [examples folder](https://github.com/codeforseattle/localwiki_client/tree/master/examples).
+
 Features / Problems
 -------------------
 
@@ -63,21 +65,17 @@ Compatibility
 Contributing
 ------------
 
-To get your improvements included, please fork and submit a pull request.
-
-Bugs and/or failing tests are very appreciated.
+* To get your improvements included, please fork and submit a pull request.
+* Bugs and/or failing tests are very appreciated.
+* See [Contributing to localwiki_client gem](https://github.com/codeforseattle/localwiki_client/wiki/Contributing-to-localwiki_client-gem) for additional details.
 
 Contributors
 ------------
-Seth Vincent
-
-Brandon Faloona
-
-Helen Canzler
-
-Jerry Frost
-
-Matt Adkins
+* Seth Vincent
+* Brandon Faloona
+* Helen Canzler
+* Jerry Frost
+* Matt Adkins
 
 LICENSE
 -------

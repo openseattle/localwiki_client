@@ -1,3 +1,8 @@
+=== 0.3.1 / 2013-04-02
+
+* Follow redirects
+* Added example scripts
+
 === 0.3.0 / 2013-03-28
 
 * Localwiki::Resource subclasses used to represent resources
