@@ -1,6 +1,8 @@
 begin
   require 'simplecov'
   SimpleCov.start if ENV["COVERAGE"]
+  SimpleCov.add_filter '/spec/'
+  SimpleCov.add_filter '/integration/'
 rescue Exception => e
   puts 'Run "gem install simplecov" to enable code coverage reporting'
 end

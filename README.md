@@ -1,6 +1,6 @@
 LocalwikiClient
 ===============
-[![Build Status](https://travis-ci.org/codeforseattle/localwiki_client.png?branch=master)](https://travis-ci.org/codeforseattle/localwiki_client) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/codeforseattle/localwiki_client)
+[![Build Status](https://travis-ci.org/codeforseattle/localwiki_client.png?branch=master)](https://travis-ci.org/codeforseattle/localwiki_client) [![Code Climate](https://codeclimate.com/github/codeforseattle/localwiki_client.png)](https://codeclimate.com/github/codeforseattle/localwiki_client)
 
 Synopsis
 --------
@@ -55,12 +55,22 @@ Features / Problems
 * \#count, #page_by_name, #unique_authors
 
 
-Compatibility
--------------
+Compatibility & Quality
+-----------------------
+
+Continuous Integration using [Travis-CI](https://travis-ci.org/codeforseattle/localwiki_client). Supported Rubies:
+
  * 2.0.0
  * 1.9.3
  * jruby-19mode
  * rbx-19mode
+
+Coverage using SimpleCov is about 100%. Run with:
+
+    rake coverage
+
+Static Analysis using [Code Climate](https://codeclimate.com/github/codeforseattle/localwiki_client)
+
 
 Contributing
 ------------
