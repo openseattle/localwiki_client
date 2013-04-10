@@ -37,7 +37,49 @@ describe 'LocalwikiClient' do
         @wiki.unique_authors('page', pagename).should eq 1
       end
     end
-
   end
+
+  context "#authors" do
+    it "returns unique authors" do
+      pending
+    end
+  end
+
+  context "#original_author" do
+    it "returns the first author" do
+      pending
+    end
+  end
+
+  context "#last_author" do
+    it "returns the last author" do
+      pending
+    end
+  end
+
+  context "#num_edits" do
+    it "returns the number of resource edits" do
+      pending
+    end
+  end
+
+  context "#edits" do
+    it "returns the resource edits" do
+      pending
+    end
+  end
+
+  context "#days_since_created" do
+    it "returns days since the resource was created" do
+      pending
+    end
+  end
+
+  context "#days_since_edited" do
+    it "returns days since resource was edited" do
+      pending
+    end
+  end
+
 end
 
