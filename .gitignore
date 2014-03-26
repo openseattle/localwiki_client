@@ -3,3 +3,4 @@ doc/
 .idea
 Gemfile.lock
 coverage
+tmp

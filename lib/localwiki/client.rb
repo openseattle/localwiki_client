@@ -24,10 +24,11 @@ module Localwiki
     #   wiki = LocalwikiClient.new 'seattlewiki.net'
     # @example Connect to http\:\/\/seattlewiki.net with user and apikey for write access
     #   wiki = LocalwikiClient.new 'seattlewiki.net', 'myusername', '89f17088f43b5ae22779365b8d1ff0ed076'
-    def initialize hostname, user=nil, apikey=nil
+    def initialize hostname='localwiki.net', user=nil, apikey=nil, api_version='v4'
       @user = user
       @apikey = apikey
       @hostname = hostname
+      @api_version = api_version
       initialize_connection @hostname
     end
 
@@ -38,7 +39,7 @@ module Localwiki
     # @example Get the number of users
     #   wiki.count('user')
     def count(resource_type)
-      path = '/api/' + resource_type.to_s
+      path = resource_type.to_s
       response = http_get(path,{limit: '1'})
       response["meta"]["total_count"]
     end
@@ -60,11 +61,11 @@ module Localwiki
     # @example Get the first 10 files
     #   wiki.list(:file, 10)
     #   #=> [ #<Localwiki::File>, ... ]
-    def list(resource_type,limit=0,params={})
-      path = '/api/' + resource_type.to_s
+    def list(resource_type,limit=30,params={})
+      path = resource_type.to_s
       params.merge!({limit: limit.to_s})
       response = http_get(path,params)
-      hydrate_list(resource_type, response['objects'])
+      hydrate_list(resource_type, response['results'])
     end
 
     ##
@@ -77,21 +78,36 @@ module Localwiki
     #   #=> #<Localwiki::Page>
     # @return [Localwiki::Resource, Faraday::Response] the resource, or the http response object
     def fetch(resource_type,identifier,params={})
-      path = '/api/' + resource_type.to_s + '/' + slugify(identifier)
+      path = resource_type.to_s + '/' + slugify(identifier)
       hydrate(resource_type, http_get(path,params))
     end
     alias_method :read, :fetch
 
     ##
-    # fetch version information for a resource
+    # fetch the map of a specific page
+    # @param identifier the slug of the page
+    # @param params hash of query string params
+    # @example Get the page with the name 'Schedule'
+    #   wiki.fetch_map 'university district'
+    #   #=> #<Localwiki::Pages>
+    # @return [Localwiki::Resource, Faraday::Response] the resource, or the http response object
+    def fetch_map(identifier,params={})
+      resource_type = :maps
+      params.merge!({ page__slug: identifier })
+      path = resource_type.to_s
+      hydrate(resource_type, http_get(path,params))
+    end
+
+    ##
+    # fetch history information for a resource
     # @param resource_type "site", "page", "user", "file", "map", "tag", "page_tags"
     # @param identifier id, pagename, slug, etc.
     # @param params hash of query string params
     # @example Get the version history for page called 'First Page'
     #   wiki.fetch_version(:page, 'First Page')
     # @return [Hash, Faraday::Response] hash from json response body, otherwise the http response object
-    def fetch_version(resource_type,identifier,params={})
-      path = '/api/' + resource_type.to_s + '_version?name=' + identifier
+    def fetch_history(resource_type,identifier,params={})
+      path = resource_type.to_s + '_history?name=' + identifier
       http_get(path,params)
     end
 
@@ -105,7 +121,7 @@ module Localwiki
     # @return [Fixnum] number of unique authors
     def unique_authors(resource_type,identifier,params={})
       json = fetch_version(resource_type,identifier,params)
-      json['objects'].map {|entry| entry['history_user']}.uniq.length
+      json['results'].map {|entry| entry['history_user']}.uniq.length
     end
 
     ##
@@ -116,7 +132,7 @@ module Localwiki
     #   wiki.create(:page, {name: 'New Page', content: '<p>A New Page!</p>'}.to_json)
     # @return [Faraday::Response] http response object
     def create(resource_type, json)
-      path = '/api/' + resource_type.to_s + '/'
+      path = resource_type.to_s + '/'
       http_post(path, json)
     end
 
@@ -129,7 +145,7 @@ module Localwiki
     #   wiki.update(:page, {name: 'Existing Page', content: '<p>Updated Page!</p>'}.to_json)
     # @return [Faraday::Response] http response object
     def update(resource_type,identifier,json)
-      path = '/api/' + resource_type.to_s + '/' + slugify(identifier)
+      path = resource_type.to_s + '/' + slugify(identifier)
       http_put(path, json)
     end
 
@@ -141,7 +157,7 @@ module Localwiki
     #   wiki.delete(:tag, 'library')
     # @return [Faraday::Response] http response object
     def delete(resource_type,identifier)
-      path = '/api/' + resource_type.to_s + '/' + slugify(identifier)
+      path =  + resource_type.to_s + '/' + slugify(identifier)
       http_delete(path)
     end
 
@@ -152,7 +168,7 @@ module Localwiki
     # @param path path portion of a url
     # @return [String] entire url
     def full_url(path)
-      'http://' + @hostname + path.to_s
+      "http://#{@hostname}/api/#{@api_version}/#{path.to_s}/"
     end
 
     ##
@@ -188,8 +204,8 @@ module Localwiki
         # config.use Faraday::Response::RaiseError       # raise exceptions on 40x, 50x responses
         config.adapter Faraday.default_adapter
       end
-      @site = fetch('site','1')
-      raise "Connection failed. #{@site.status} error returned from #{hostname}." if @site.kind_of? Faraday::Response
+      @api_root = http_get('')
+      raise "Connection failed. #{@api_root.status} error returned from #{hostname}." if @api_root.kind_of? Faraday::Response
     end
   
     ##

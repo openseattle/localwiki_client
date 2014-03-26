@@ -4,7 +4,7 @@ module Localwiki
 
   ##
   # create instance (of correct type) for resource
-  # @param type resource type "site", "page", "user", "file", "map", "tag", "page_tags"
+  # @param type resource type "regions", "pages", "users", "files", "maps", "tags", "page_tags"
   # @param json_hash [Hash] hash object from parsed json
   # @return new instance - child class of Localwiki::Resource
   def self.make_one(type, json_hash)
@@ -28,16 +28,18 @@ module Localwiki
     end
   end
 
+  class Regions < Resource; end
+
   # http://localwiki.readthedocs.org/en/latest/api.html#site
-  class Site < Resource; end
+  #class Site < Resource; end
 
   # http://localwiki.readthedocs.org/en/latest/api.html#pages
-  class Page < Resource; end
+  class Pages < Resource; end
 
   ##
   # represents map object returned from server
   # http://localwiki.readthedocs.org/en/latest/api.html#maps
-  class Map < Resource
+  class Maps < Resource
 
     def single_point?
       self.points && self.points['coordinates'].size == 1
@@ -62,15 +64,15 @@ module Localwiki
   end
 
   # http://localwiki.readthedocs.org/en/latest/api.html#files
-  class File < Resource; end
+  class Files < Resource; end
 
   # http://localwiki.readthedocs.org/en/latest/api.html#tags
-  class Tag < Resource; end
+  class Tags < Resource; end
 
   # http://localwiki.readthedocs.org/en/latest/api.html#page-tags
   class PageTags < Resource; end
 
   # http://localwiki.readthedocs.org/en/latest/api.html#users
-  class User < Resource; end
+  class Users < Resource; end
 
 end
