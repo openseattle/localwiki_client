@@ -59,11 +59,10 @@ module Localwiki
     # @param params hash of query string params
     # @return [Array, Faraday::Response] array of Localwiki::Resource objects, or the http response object
     # @example Get the first 10 files
-    #   wiki.list(:file, 10)
+    #   wiki.list(:file, { limit: 10 })
     #   #=> [ #<Localwiki::File>, ... ]
-    def list(resource_type,limit=30,params={})
+    def list(resource_type,params={})
       path = resource_type.to_s
-      params.merge!({limit: limit.to_s})
       response = http_get(path,params)
       hydrate_list(resource_type, response['results'])
     end
