@@ -156,7 +156,7 @@ module Localwiki
     #   wiki.delete(:tag, 'library')
     # @return [Faraday::Response] http response object
     def delete(resource_type,identifier)
-      path =  + resource_type.to_s + '/' + slugify(identifier)
+      path = resource_type.to_s + '/' + slugify(identifier)
       http_delete(path)
     end
 
